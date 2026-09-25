@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Column 1 */}
-          <div>
-            <Link to="/" className="flex items-center mb-6">
+          <div className="text-center md:text-left">
+            <Link to="/" className="flex justify-center md:justify-start mb-6">
               <img 
                 src={logoImage} 
                 alt="Arlenvia Logo" 
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2 */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-[var(--color-gold-light)] mb-6">Quick Links</h4>
             <ul className="space-y-3 text-gray-400">
               <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
 
           {/* Column 3 */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-[var(--color-gold-light)] mb-6">Services</h4>
             <ul className="space-y-3 text-gray-400">
               <li><Link to="/consultancy" className="hover:text-white transition-colors">Management Systems</Link></li>
@@ -46,26 +46,26 @@ const Footer = () => {
           </div>
 
           {/* Column 4 */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-[var(--color-gold-light)] mb-6">Contact</h4>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li className="flex items-start gap-3">
-                <FaPhoneAlt className="text-[var(--color-gold-primary)] mt-1 shrink-0" />
-                +63-9060139793
+            <ul className="space-y-4 text-gray-400 text-sm">
+              <li className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-3">
+                <FaPhoneAlt className="text-[var(--color-gold-primary)] md:mt-1 shrink-0" />
+                <span>+63-9060139793</span>
               </li>
-              <li className="flex items-start gap-3">
-                <FaEnvelope className="text-[var(--color-gold-primary)] mt-1 shrink-0" />
-                <div>
+              <li className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-3">
+                <FaEnvelope className="text-[var(--color-gold-primary)] md:mt-1 shrink-0" />
+                <div className="text-center md:text-left">
                   <a href="mailto:info@arlenvia.com" className="block hover:text-white">info@arlenvia.com</a>
                   <a href="mailto:arlene@arlenvia.com" className="block hover:text-white">arlene@arlenvia.com</a>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-[var(--color-gold-primary)] mt-1 shrink-0" />
-                <p>Avida Residences Sta. Monica,<br/>Brgy. Antipolo del Sur,<br/>Lipa City, Batangas,<br/>Philippines 4217</p>
+              <li className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-3">
+                <FaMapMarkerAlt className="text-[var(--color-gold-primary)] md:mt-1 shrink-0" />
+                <p className="text-center md:text-left">Avida Residences Sta. Monica,<br/>Brgy. Antipolo del Sur,<br/>Lipa City, Batangas,<br/>Philippines 4217</p>
               </li>
             </ul>
-            <div className="mt-6">
+            <div className="mt-6 flex justify-center md:justify-start">
               <a href="#" className="text-[var(--color-gold-primary)] text-sm font-medium hover:underline flex items-center gap-2">
                 <FaMap /> View on Google Maps
               </a>
