@@ -5,12 +5,8 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Check if the browser supports smooth scrolling
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
+    // Use instant scroll to ensure it works reliably on all devices during route changes
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;
