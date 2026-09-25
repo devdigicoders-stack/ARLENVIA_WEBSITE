@@ -12,7 +12,7 @@ import DigitalUseCases from '../components/digital-ai/DigitalUseCases';
 import DigitalApproach from '../components/digital-ai/DigitalApproach';
 import WhyArlenviaDigital from '../components/digital-ai/WhyArlenviaDigital';
 import CTASection from '../components/common/CTASection';
-import heroImage1 from '../assets/images/digital_dashboard.jpg';
+import heroImage1 from '../assets/images/ind_engineering.jpg';
 import heroImage2 from '../assets/images/hero_training_2.jpg';
 import heroImage3 from '../assets/images/ind_manufacturing.jpg';
 
