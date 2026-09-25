@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary-navy: #031C36;
+  --color-primary-deep: #020E20;
+  --color-primary-corporate: #073866;
+  --color-gold-primary: #D5A72E;
+  --color-gold-light: #F0CD72;
+  --color-warm-white: #F7F6F2;
+  
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-warm-white);
+    color: var(--color-primary-navy);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
