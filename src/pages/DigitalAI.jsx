@@ -30,7 +30,7 @@ const DigitalAI = () => {
           title="Smarter Systems. Better Insights. Responsible AI."
           description="Helping organizations use digital tools, data analytics and AI to improve visibility, monitoring, decision-making and management-system performance."
           breadcrumb="Digital & AI"
-          bgImages={[heroImage1, heroImage2, heroImage3]}
+          bgImages={[heroImage1]}
         />
         
         <DigitalOverview />
