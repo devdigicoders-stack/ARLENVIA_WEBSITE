@@ -8,6 +8,7 @@ import MapSection from '../components/contact/MapSection';
 import QuickContactStrip from '../components/contact/QuickContactStrip';
 import FAQPreview from '../components/contact/FAQPreview';
 import CTASection from '../components/common/CTASection';
+import heroImg from '../assets/images/hero_training.jpg';
 
 const Contact = () => {
   return (
@@ -23,6 +24,7 @@ const Contact = () => {
           title="Let’s Discuss Your Training, Consultancy or Improvement Needs"
           description="Connect with Arlenvia to discuss management systems, professional training, audit support, business improvement, digital innovation or customized organizational requirements."
           breadcrumb="Contact Us"
+          bgImages={[heroImg]}
         />
         
         <ContactCards />

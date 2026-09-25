@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import auditImg from '../../assets/images/hero_training_2.jpg';
 
 const DigitalAudit = () => {
   const points = [
@@ -50,21 +51,19 @@ const DigitalAudit = () => {
 
         {/* Right: Abstract Visual */}
         <motion.div 
-          className="relative aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(3,28,54,0.1)] bg-[var(--color-primary-navy)]"
+          className="relative aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(3,28,54,0.1)] group"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="absolute inset-0 p-8 flex flex-col gap-4">
-            <div className="h-1/3 w-full bg-gradient-to-r from-[var(--color-primary-corporate)] to-[var(--color-primary-deep)] rounded-xl opacity-50 animate-pulse" />
-            <div className="flex-grow flex gap-4">
-              <div className="w-1/3 h-full bg-gradient-to-t from-[var(--color-gold-primary)]/20 to-transparent rounded-xl" />
-              <div className="w-2/3 h-full bg-gradient-to-bl from-white/10 to-transparent rounded-xl flex items-center justify-center">
-                <div className="w-16 h-16 border-4 border-[var(--color-gold-primary)]/50 border-t-[var(--color-gold-light)] rounded-full animate-spin" />
-              </div>
-            </div>
-          </div>
+          <img 
+            src={auditImg}
+            alt="Modern Digital Auditing"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          {/* Subtle Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-tl from-[var(--color-primary-navy)]/40 to-transparent mix-blend-multiply" />
         </motion.div>
       </div>
     </section>

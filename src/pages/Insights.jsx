@@ -8,15 +8,29 @@ import BlogGrid from '../components/insights/BlogGrid';
 import KnowledgeAreas from '../components/insights/KnowledgeAreas';
 import NewsletterSection from '../components/insights/NewsletterSection';
 import CTASection from '../components/common/CTASection';
+import heroImage1 from '../assets/images/about_arlenvia.jpg';
+import heroImage2 from '../assets/images/ind_education.jpg';
+import heroImage3 from '../assets/images/hero_training_3.jpg';
 
-const initialBlogs = [
+import imgBlog1 from '../assets/images/ind_government.jpg';
+import imgBlog2 from '../assets/images/hero_training_2.jpg';
+import imgBlog3 from '../assets/images/ind_manufacturing.jpg';
+import imgBlog4 from '../assets/images/digital_dashboard.jpg';
+import imgBlog5 from '../assets/images/ind_engineering.jpg';
+import imgBlog6 from '../assets/images/hero_training.jpg';
+import imgBlog7 from '../assets/images/training_section.jpg';
+import imgBlog8 from '../assets/images/ind_construction.jpg';
+import imgBlog9 from '../assets/images/ind_healthcare.jpg';
+
+export const initialBlogs = [
   {
     id: 1,
     category: "Management Systems",
     date: "October 10, 2026",
     title: "Building a Management System That Supports Business Performance",
     desc: "Discover how to align your ISO standards with core business objectives to create a system that truly drives improvement.",
-    slug: "building-management-system-supports-business-performance"
+    slug: "building-management-system-supports-business-performance",
+    img: imgBlog1
   },
   {
     id: 2,
@@ -24,7 +38,8 @@ const initialBlogs = [
     date: "October 5, 2026",
     title: "Beyond Checklist Audits: Focusing on Process Effectiveness",
     desc: "Learn how to transition from simple compliance checking to auditing that evaluates the true effectiveness of your processes.",
-    slug: "beyond-checklist-audits-focusing-process-effectiveness"
+    slug: "beyond-checklist-audits-focusing-process-effectiveness",
+    img: imgBlog2
   },
   {
     id: 3,
@@ -32,7 +47,8 @@ const initialBlogs = [
     date: "September 28, 2026",
     title: "Using Root Cause Analysis for Sustainable Improvement",
     desc: "A practical guide to identifying underlying issues rather than just treating symptoms, ensuring problems don't return.",
-    slug: "using-root-cause-analysis-sustainable-improvement"
+    slug: "using-root-cause-analysis-sustainable-improvement",
+    img: imgBlog3
   },
   {
     id: 4,
@@ -40,7 +56,8 @@ const initialBlogs = [
     date: "September 20, 2026",
     title: "KPIs That Support Better Business Decisions",
     desc: "How to select, measure and utilize Key Performance Indicators that provide genuine insight for management.",
-    slug: "kpis-support-better-business-decisions"
+    slug: "kpis-support-better-business-decisions",
+    img: imgBlog4
   },
   {
     id: 5,
@@ -48,7 +65,8 @@ const initialBlogs = [
     date: "September 15, 2026",
     title: "Responsible AI in Quality and Management Systems",
     desc: "Exploring the balance between technological efficiency and human oversight when implementing AI in quality control.",
-    slug: "responsible-ai-quality-management-systems"
+    slug: "responsible-ai-quality-management-systems",
+    img: imgBlog5
   },
   {
     id: 6,
@@ -56,7 +74,35 @@ const initialBlogs = [
     date: "September 5, 2026",
     title: "From Process Documentation to Process Performance",
     desc: "Stop just documenting what you do. Start analyzing how you do it to find practical opportunities for improvement.",
-    slug: "from-process-documentation-to-process-performance"
+    slug: "from-process-documentation-to-process-performance",
+    img: imgBlog6
+  },
+  {
+    id: 7,
+    category: "Business Performance",
+    date: "August 28, 2026",
+    title: "Leveraging Data for Strategic Planning",
+    desc: "Understand how to harness operational data to set realistic goals and build long-term strategies that scale with your business.",
+    slug: "leveraging-data-for-strategic-planning",
+    img: imgBlog7
+  },
+  {
+    id: 8,
+    category: "Digital & AI",
+    date: "August 18, 2026",
+    title: "Streamlining Risk Management with Technology",
+    desc: "A look at modern tools and frameworks that allow you to track, analyze, and mitigate organizational risks automatically.",
+    slug: "streamlining-risk-management-with-technology",
+    img: imgBlog8
+  },
+  {
+    id: 9,
+    category: "Quality",
+    date: "August 10, 2026",
+    title: "Developing a Culture of Continuous Quality",
+    desc: "Quality isn't just a department—it's a mindset. Learn how to train your teams to prioritize quality at every level.",
+    slug: "developing-culture-continuous-quality",
+    img: imgBlog9
   }
 ];
 
@@ -84,6 +130,7 @@ const Insights = () => {
           title="Insights for Better Systems, Stronger Capability & Improved Performance"
           description="Explore practical perspectives on quality, management systems, auditing, performance improvement, digital transformation and responsible AI."
           breadcrumb="Insights"
+          bgImages={[heroImage1, heroImage2, heroImage3]}
         />
         
         <FeaturedInsight />

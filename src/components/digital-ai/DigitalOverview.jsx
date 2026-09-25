@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import dashboardImg from '../../assets/images/digital_dashboard.jpg';
 
 const DigitalOverview = () => {
   const highlights = [
@@ -14,29 +15,20 @@ const DigitalOverview = () => {
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Visual */}
         <motion.div 
-          className="relative"
+          className="relative group"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(3,28,54,0.1)] relative bg-[var(--color-primary-navy)] border border-gray-100 p-8 flex flex-col">
-            {/* Dashboard Mockup Feel */}
-            <div className="w-full h-8 flex gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full bg-red-400" />
-              <div className="w-3 h-3 rounded-full bg-yellow-400" />
-              <div className="w-3 h-3 rounded-full bg-green-400" />
-            </div>
-            <div className="flex-grow grid grid-cols-2 gap-4">
-              <div className="bg-white/10 rounded-lg p-4 flex flex-col justify-end">
-                <div className="w-3/4 h-2 bg-[var(--color-gold-primary)] rounded mb-2" />
-                <div className="w-1/2 h-2 bg-[var(--color-gold-light)] rounded" />
-              </div>
-              <div className="bg-white/5 rounded-lg p-4">
-                <div className="w-full h-full border-2 border-dashed border-white/20 rounded-full" />
-              </div>
-              <div className="col-span-2 bg-gradient-to-r from-[var(--color-primary-corporate)]/50 to-transparent rounded-lg p-4 h-16" />
-            </div>
+          <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(3,28,54,0.1)] relative">
+            <img 
+              src={dashboardImg}
+              alt="Digital Dashboard Analytics"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            {/* Subtle Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary-navy)]/40 to-transparent mix-blend-multiply" />
           </div>
           {/* Decorative Glow */}
           <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[var(--color-gold-primary)]/20 rounded-full blur-[40px] pointer-events-none" />
