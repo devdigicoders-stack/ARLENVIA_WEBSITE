@@ -10,45 +10,47 @@ const SupportAreas = () => {
     { num: "05", title: "Risk & Opportunity Management" },
     { num: "06", title: "Process Mapping & Improvement" },
     { num: "07", title: "Documentation & Implementation Support" },
-    { num: "08", title: "Supplier Quality & Compliance Audits" } // Added to balance the grid perfectly
+    { num: "08", title: "Supplier Quality & Compliance Audits" }
   ];
 
   return (
-    <section className="py-20 bg-[var(--color-warm-white)]">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-4"
+    <section className="py-24 lg:py-32 bg-[#020E20] text-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            Consultancy Support Areas
-          </motion.h2>
-          <div className="w-24 h-1 bg-[var(--color-gold-primary)] mx-auto" />
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-10 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Specialized Services
+              </span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-white leading-[1.1] tracking-tight">
+              Consultancy Support Areas
+            </h2>
+          </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 p-px rounded-sm">
           {areas.map((area, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-md border-t-4 border-t-[var(--color-gold-primary)] relative overflow-hidden"
+              className="bg-[#020E20] p-8 lg:p-10 relative overflow-hidden group hover:bg-white/5 transition-colors duration-500"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              {/* Default Gold Watermark */}
-              <div className="absolute -right-6 -bottom-6 text-8xl font-bold text-[var(--color-gold-primary)]/10 pointer-events-none select-none font-serif">
-                {area.num}
-              </div>
-              
-              <div className="relative z-10">
-                <span className="text-[var(--color-gold-primary)] font-bold text-lg mb-4 block">
+              <div className="relative z-10 flex flex-col h-full justify-between gap-12">
+                <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[13px] tracking-widest block">
                   {area.num}
                 </span>
-                <h3 className="text-xl font-bold text-[var(--color-primary-navy)] leading-tight">
+                <h3 className="text-[19px] font-heading font-bold text-white leading-tight group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
                   {area.title}
                 </h3>
               </div>

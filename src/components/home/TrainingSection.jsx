@@ -4,33 +4,30 @@ import { Link } from 'react-router-dom';
 import trainingImage from '../../assets/images/training_section.jpg';
 
 const TrainingSection = () => {
-  const chips = [
-    "Management Systems",
-    "Auditing & Assurance",
-    "Quality & Performance",
-    "Customized Training"
+  const categories = [
+    { title: "Management Systems", desc: "ISO 9001, 14001, 45001 & more" },
+    { title: "Auditing & Assurance", desc: "Internal & Lead Auditor" },
+    { title: "Quality & Performance", desc: "Root Cause & Process Improvement" },
+    { title: "Customized Training", desc: "Tailored to your organization" }
   ];
 
   return (
-    <section className="py-24 bg-[var(--color-warm-white)]">
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <section className="py-24 lg:py-32 bg-white">
+      <div className="container mx-auto px-6 grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center">
         {/* Left Side: Visual */}
         <motion.div
-          className="relative aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(3,28,54,0.1)] group"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          className="relative aspect-square lg:aspect-[4/5] overflow-hidden"
+          initial={{ opacity: 0, clipPath: 'inset(10% 10% 10% 10%)' }}
+          whileInView={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <img 
             src={trainingImage} 
             alt="Interactive Professional Training Seminar" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-cover"
           />
-          {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-corporate)]/30 to-transparent mix-blend-overlay" />
-          {/* Decorative element */}
-          <div className="absolute inset-0 border-[6px] border-[var(--color-gold-primary)]/20 rounded-2xl m-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+          <div className="absolute inset-0 bg-[#073866]/10 mix-blend-multiply" />
         </motion.div>
 
         {/* Right Side: Content */}
@@ -40,37 +37,46 @@ const TrainingSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mb-4 flex items-center gap-4">
-            <div className="h-px w-8 bg-[var(--color-primary-corporate)]" />
-            <span className="text-[var(--color-primary-corporate)] font-bold text-sm tracking-widest uppercase">
-              TRAINING & PROFESSIONAL DEVELOPMENT
+          <div className="mb-6 flex items-center gap-4">
+            <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+              Training & Professional Development
             </span>
+            <div className="h-px w-12 bg-[var(--color-gold-primary)]/50" />
           </div>
           
-          <h2 className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-6 leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] mb-8 leading-[1.15] tracking-tight">
             Practical Learning That Creates Workplace Capability
           </h2>
           
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
+          <p className="text-[#667085] text-lg leading-relaxed mb-10 max-w-xl font-light">
             Our training is application-focused and highly interactive, designed to ensure that participants don't just understand requirements, but can effectively apply them to improve organizational performance.
           </p>
           
-          <div className="flex flex-wrap gap-3 mb-10">
-            {chips.map((chip, index) => (
-              <span 
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+            {categories.map((category, index) => (
+              <motion.div 
                 key={index} 
-                className="bg-white border border-gray-200 text-[var(--color-primary-navy)] font-semibold px-4 py-2 rounded-full text-sm shadow-sm"
+                className="bg-gray-50 border border-gray-100 p-6 hover:bg-white hover:shadow-lg transition-all duration-300 group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
               >
-                {chip}
-              </span>
+                <div className="w-8 h-px bg-[var(--color-gold-primary)] mb-4 scale-x-50 origin-left group-hover:scale-x-100 transition-transform duration-300" />
+                <h4 className="text-[17px] font-heading font-bold text-[#020E20] mb-2">{category.title}</h4>
+                <p className="text-sm text-[#667085]">{category.desc}</p>
+              </motion.div>
             ))}
           </div>
           
           <Link 
             to="/training" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-gold-primary)] text-white font-bold rounded hover:bg-[var(--color-primary-navy)] transition-colors shadow-md"
+            className="inline-flex items-center gap-4 group"
           >
-            Explore Training Programs
+            <span className="text-[#020E20] font-heading font-bold uppercase tracking-widest text-[13px] border-b border-[#020E20] pb-1 group-hover:text-[var(--color-gold-primary)] group-hover:border-[var(--color-gold-primary)] transition-colors">
+              Explore Training Programs
+            </span>
+            <span className="text-[#020E20] group-hover:text-[var(--color-gold-primary)] group-hover:translate-x-1 transition-all">→</span>
           </Link>
         </motion.div>
       </div>

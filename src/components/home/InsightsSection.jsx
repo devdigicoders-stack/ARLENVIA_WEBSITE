@@ -49,13 +49,13 @@ const InsightsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="mb-2 flex items-center gap-4">
-              <div className="h-px w-8 bg-[var(--color-gold-primary)]" />
-              <span className="text-[var(--color-gold-primary)] font-bold text-sm tracking-widest uppercase">
-                KNOWLEDGE HUB
+            <div className="mb-6 flex items-center gap-4">
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Knowledge Hub
               </span>
+              <div className="h-px w-12 bg-[var(--color-gold-primary)]/50" />
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)]">
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-[1.1] tracking-tight">
               Latest Insights
             </h2>
           </motion.div>
@@ -68,9 +68,10 @@ const InsightsSection = () => {
           >
             <Link 
               to="/insights" 
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[var(--color-primary-navy)] text-[var(--color-primary-navy)] font-bold rounded hover:bg-[var(--color-primary-navy)] hover:text-white transition-colors"
+              className="inline-flex items-center gap-3 text-[#020E20] font-heading font-bold text-[12px] uppercase tracking-widest group"
             >
-              View All Articles
+              <span className="border-b border-transparent group-hover:border-[#020E20] transition-colors pb-0.5">View All Articles</span>
+              <span className="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[var(--color-gold-primary)]">→</span>
             </Link>
           </motion.div>
         </div>

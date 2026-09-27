@@ -135,7 +135,7 @@ const Insights = () => {
         
         <FeaturedInsight />
         
-        <section className="py-12 bg-[var(--color-warm-white)]">
+        <section className="py-24 bg-white relative z-10 border-t border-[#E5E7EB]">
           <BlogFilters activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
           <BlogSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
           <BlogGrid blogs={filteredBlogs} />

@@ -12,29 +12,39 @@ const CommitmentSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-[var(--color-warm-white)]">
-      <div className="container mx-auto px-6 text-center">
-        <motion.h2 
-          className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Our Commitment
-        </motion.h2>
+    <section className="py-24 lg:py-32 bg-[#020E20]">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Our Values
+              </span>
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-white leading-[1.1] tracking-tight">
+              Our Commitment
+            </h2>
+          </motion.div>
+        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 p-px rounded-sm overflow-hidden">
           {commitments.map((word, index) => (
             <motion.div
               key={index}
-              className="bg-white border-b-4 border-[var(--color-gold-primary)] py-8 px-4 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="bg-[#020E20] py-12 px-6 flex items-center justify-center group hover:bg-[var(--color-gold-primary)] transition-colors duration-500 cursor-default"
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <h3 className="text-xl font-bold text-[var(--color-primary-navy)]">
+              <h3 className="text-[17px] font-heading font-bold text-white group-hover:text-[#020E20] transition-colors duration-500 uppercase tracking-widest text-center">
                 {word}
               </h3>
             </motion.div>

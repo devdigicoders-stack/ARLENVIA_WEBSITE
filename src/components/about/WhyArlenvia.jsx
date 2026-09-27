@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiPlus } from 'react-icons/fi';
 
 const WhyArlenvia = () => {
   const reasons = [
@@ -18,7 +19,7 @@ const WhyArlenvia = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side: Big Heading */}
-          <div className="sticky top-32">
+          <div className="relative lg:sticky lg:top-32 mb-10 lg:mb-0 z-10">
             <motion.h2 
               className="text-4xl lg:text-5xl font-bold leading-tight mb-6"
               initial={{ opacity: 0, x: -30 }}
@@ -60,7 +61,7 @@ const WhyArlenvia = () => {
                     {item.title}
                   </span>
                   <span className={`text-2xl transform transition-transform duration-300 ${activeIndex === index ? 'rotate-45 text-[var(--color-gold-primary)]' : 'text-gray-500'}`}>
-                    +
+                    <FiPlus />
                   </span>
                 </button>
                 

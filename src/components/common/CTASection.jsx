@@ -1,72 +1,68 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Button from './Button';
 import logo from '../../assets/logo/logo.png';
 
 const CTASection = ({ title, subtitle, primaryBtnText, primaryBtnLink, secondaryBtnText, secondaryBtnLink }) => {
   return (
-    <section className="relative py-24 bg-[var(--color-primary-navy)] overflow-hidden">
-      {/* Background Image / Overlay */}
+    <section className="relative py-32 bg-[#020E20] overflow-hidden">
+      {/* Premium Background */}
       <div className="absolute inset-0 z-0 flex items-center justify-center">
-        <div className="absolute inset-0 bg-[var(--color-primary-navy)]/90 mix-blend-multiply z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-deep)] to-transparent z-10 opacity-80" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[var(--color-gold-primary)]/5 blur-[100px] z-10" />
+        <div className="absolute inset-0 bg-[#020E20] z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#073866]/40 via-[#020E20] to-[#020E20] z-10 opacity-90" />
         
         {/* Logo Watermark */}
         <motion.img 
           src={logo}
           alt="Arlenvia Logo Watermark"
-          className="absolute w-[90vw] max-w-[900px] opacity-[0.03] grayscale pointer-events-none"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 0.03, scale: 1 }}
+          className="absolute w-[120vw] md:w-[90vw] max-w-[800px] opacity-[0.02] pointer-events-none"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 0.02, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
         />
-        
-        {/* Abstract pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBoNDBWMEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDEwaDQwTTAgMjBoNDBNeCAzMGg0ME0xMCAwdjQwTTIwIDB2NDBNMzAgMHY0MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmurlCtnKSIvPjwvc3ZnPg==')] opacity-10" />
       </div>
 
       <div className="container mx-auto px-6 relative z-20 text-center max-w-4xl">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+          className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white mb-6 leading-[1.1] tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           {title}
         </motion.h2>
 
         {subtitle && (
           <motion.p 
-            className="text-xl text-gray-300 mb-10 font-light"
+            className="text-xl text-white/70 mb-12 font-light max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             {subtitle}
           </motion.p>
         )}
 
         <motion.div 
-          className="flex flex-wrap justify-center gap-4"
+          className="flex flex-col sm:flex-row justify-center gap-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Link to={primaryBtnLink || '/contact'}>
-            <Button variant="primary">
+          <Link to={primaryBtnLink || '/contact'} className="group">
+            <button className="w-full sm:w-auto bg-[var(--color-gold-primary)] text-[#020E20] h-[52px] px-8 text-[13px] font-heading font-bold uppercase tracking-widest hover:bg-[var(--color-gold-light)] transition-colors flex items-center justify-center gap-3">
               {primaryBtnText || 'Talk to Our Consultants'}
-            </Button>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </button>
           </Link>
           <Link to={secondaryBtnLink || '/consultancy'}>
-            <Button variant="outline">
+            <button className="w-full sm:w-auto bg-transparent border border-white/20 text-white h-[52px] px-8 text-[13px] font-heading font-bold uppercase tracking-widest hover:border-[var(--color-gold-primary)] hover:text-[var(--color-gold-primary)] transition-colors">
               {secondaryBtnText || 'Explore Our Services'}
-            </Button>
+            </button>
           </Link>
         </motion.div>
       </div>

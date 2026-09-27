@@ -14,29 +14,34 @@ const DigitalUseCases = () => {
   ];
 
   return (
-    <section className="py-24 bg-[var(--color-warm-white)]">
-      <div className="container mx-auto px-6 text-center">
-        <motion.h2 
-          className="text-2xl lg:text-3xl font-bold text-[var(--color-primary-navy)] mb-12"
+    <section className="py-24 lg:py-32 bg-[#F7F6F2] border-t border-[#E5E7EB]">
+      <div className="container mx-auto px-6 max-w-7xl text-center">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
         >
-          Where Digital & AI Can Help
-        </motion.h2>
+          <h2 className="text-3xl lg:text-4xl font-heading font-semibold text-[#020E20] mb-4 tracking-tight">
+            Where Digital & AI Can Help
+          </h2>
+          <div className="w-16 h-px bg-[var(--color-gold-primary)] mx-auto" />
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           {useCases.map((useCase, index) => (
             <motion.div
               key={index}
-              className="bg-white px-4 py-5 rounded-lg border border-gray-100 shadow-sm hover:border-[var(--color-gold-primary)]/50 hover:shadow-md transition-all duration-300 font-medium text-[var(--color-primary-navy)] text-sm lg:text-base cursor-default"
-              initial={{ opacity: 0, scale: 0.9 }}
+              className="bg-white border border-[#E5E7EB] px-8 py-4 hover:bg-[#020E20] group transition-all duration-500 cursor-default shadow-sm hover:shadow-xl"
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              {useCase}
+              <span className="font-heading font-bold text-[13px] tracking-widest uppercase text-[#020E20] group-hover:text-white transition-colors duration-500">
+                {useCase}
+              </span>
             </motion.div>
           ))}
         </div>

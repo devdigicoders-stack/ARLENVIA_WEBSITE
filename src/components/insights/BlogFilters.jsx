@@ -14,16 +14,16 @@ const BlogFilters = ({ activeFilter, setActiveFilter }) => {
   ];
 
   return (
-    <div className="container mx-auto px-6 mb-12">
-      <div className="flex flex-wrap justify-center gap-3">
+    <div className="container mx-auto px-6 max-w-7xl mb-12">
+      <div className="flex flex-wrap justify-center gap-3 lg:gap-4">
         {categories.map((cat, index) => (
           <motion.button
             key={index}
             onClick={() => setActiveFilter(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
+            className={`px-5 py-2 text-[12px] uppercase tracking-widest font-heading font-bold transition-all duration-300 border ${
               activeFilter === cat 
-                ? 'bg-[var(--color-primary-navy)] text-white border-[var(--color-primary-navy)] shadow-md' 
-                : 'bg-white text-gray-600 border-gray-200 hover:border-[var(--color-primary-corporate)] hover:text-[var(--color-primary-corporate)]'
+                ? 'bg-[#020E20] text-white border-[#020E20]' 
+                : 'bg-transparent text-[#667085] border-[#E5E7EB] hover:border-[var(--color-gold-primary)] hover:text-[#020E20]'
             }`}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

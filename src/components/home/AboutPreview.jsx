@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import aboutImage from '../../assets/images/about_arlenvia.jpg';
+import { FiArrowRight } from 'react-icons/fi';
 
 const AboutPreview = () => {
   return (
@@ -9,20 +10,17 @@ const AboutPreview = () => {
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Visual */}
         <motion.div
-          className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(3,28,54,0.1)] group"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          className="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden"
+          initial={{ opacity: 0, clipPath: 'inset(10% 10% 10% 10%)' }}
+          whileInView={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <img 
             src={aboutImage} 
             alt="About Arlenvia Consultancy" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-cover"
           />
-          {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary-navy)]/30 to-transparent mix-blend-overlay" />
-          <div className="absolute w-64 h-64 border border-[var(--color-gold-primary)]/40 rounded-full -left-10 -bottom-10 pointer-events-none" />
         </motion.div>
 
         {/* Right Side: Content */}
@@ -32,27 +30,38 @@ const AboutPreview = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mb-4 flex items-center gap-4">
-            <div className="h-px w-8 bg-[var(--color-gold-primary)]" />
-            <span className="text-[var(--color-gold-primary)] font-bold text-sm tracking-widest uppercase">
+          <div className="mb-6 flex items-center gap-4">
+            <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
               ABOUT ARLENVIA
             </span>
+            <div className="h-px w-12 bg-[var(--color-gold-primary)]/50" />
           </div>
           
-          <h2 className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-6 leading-tight">
-            Transforming Standards Into Practical Business Results
+          <h2 className="text-4xl lg:text-[2.75rem] font-heading font-semibold text-[#020E20] mb-8 leading-[1.1] tracking-tight">
+            Turning Management-System Requirements Into Practical Business Value
           </h2>
           
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
+          <p className="text-[#667085] text-lg leading-[1.8] mb-10 font-light max-w-xl">
             Arlenvia focuses on helping organizations bridge the gap between compliance requirements and actual business capability. Through expert management systems consultancy, quality assurance, organizational performance improvement, and practical training, we deliver sustainable solutions.
           </p>
+
+          <div className="grid grid-cols-2 gap-4 mb-12">
+            {['Practical', 'Evidence-Based', 'Performance-Oriented', 'Sustainable'].map((bullet, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 bg-[var(--color-gold-primary)] rounded-full" />
+                <span className="text-[#102033] font-heading font-semibold text-[15px]">{bullet}</span>
+              </div>
+            ))}
+          </div>
           
           <Link 
             to="/about" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-primary-navy)] text-white font-bold rounded hover:bg-[var(--color-primary-corporate)] transition-colors group"
+            className="inline-flex items-center gap-4 group"
           >
-            Discover Arlenvia
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            <span className="text-[#020E20] font-heading font-bold uppercase tracking-widest text-[13px] border-b border-[#020E20] pb-1 group-hover:text-[var(--color-gold-primary)] group-hover:border-[var(--color-gold-primary)] transition-colors">
+              Learn More About Arlenvia
+            </span>
+            <FiArrowRight className="text-[#020E20] group-hover:text-[var(--color-gold-primary)] group-hover:translate-x-1 transition-all" />
           </Link>
         </motion.div>
       </div>

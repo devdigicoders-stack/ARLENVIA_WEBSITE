@@ -12,22 +12,30 @@ const KnowledgeAreas = ({ setActiveFilter }) => {
   ];
 
   return (
-    <section className="py-24 bg-[var(--color-primary-navy)] text-white relative">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-4xl font-bold mb-4"
+    <section className="py-24 lg:py-32 bg-[#020E20] text-white relative">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="text-center mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            Explore Our Areas of Expertise
-          </motion.h2>
-          <div className="w-24 h-1 bg-[var(--color-gold-primary)] mx-auto" />
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Themes
+              </span>
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-white mb-6 leading-[1.1] tracking-tight">
+              Explore Our <span className="italic font-light text-[var(--color-gold-primary)]">Areas of Expertise</span>
+            </h2>
+          </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 max-w-5xl mx-auto border border-white/10">
           {areas.map((area, index) => (
             <motion.div
               key={index}
@@ -46,13 +54,16 @@ const KnowledgeAreas = ({ setActiveFilter }) => {
                    window.scrollTo({ top: 400, behavior: 'smooth' });
                 }
               }}
-              className="bg-white/5 border border-white/10 p-8 rounded-xl text-center hover:bg-[var(--color-gold-primary)] hover:border-[var(--color-gold-primary)] hover:text-[var(--color-primary-navy)] transition-all duration-300 cursor-pointer group"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="bg-[#020E20] p-10 text-center hover:bg-white/5 transition-colors duration-500 cursor-pointer group relative overflow-hidden flex items-center justify-center min-h-[160px]"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <h3 className="font-bold text-lg">{area}</h3>
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+              <h3 className="font-heading font-bold text-[15px] uppercase tracking-widest text-white group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
+                {area}
+              </h3>
             </motion.div>
           ))}
         </div>

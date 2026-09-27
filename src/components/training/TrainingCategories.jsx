@@ -58,27 +58,32 @@ const TrainingCategories = () => {
   ];
 
   return (
-    <section className="py-24 bg-[var(--color-warm-white)]">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-8">
+    <section className="py-24 lg:py-32 bg-[#020E20] text-white relative overflow-hidden">
+      {/* Background Accent */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#073866] rounded-full blur-[150px] opacity-20" />
+      </div>
+
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="grid md:grid-cols-2 gap-px bg-white/10 p-px rounded-sm">
           {categories.map((cat, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 lg:p-10 rounded-2xl border-t-4 border-[var(--color-gold-primary)] shadow-sm hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#020E20] p-10 lg:p-14 hover:bg-white/5 transition-colors duration-500 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h3 className="text-2xl font-bold text-[var(--color-primary-navy)] mb-6 pb-4 border-b border-gray-100">
+              <h3 className="text-2xl font-heading font-semibold text-white mb-8 pb-6 border-b border-white/10 group-hover:border-[var(--color-gold-primary)]/50 transition-colors duration-500">
                 {cat.title}
               </h3>
-              {cat.desc && <p className="text-gray-600 mb-4 italic">{cat.desc}</p>}
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+              {cat.desc && <p className="text-[var(--color-gold-primary)] text-sm mb-6 font-heading font-bold uppercase tracking-widest">{cat.desc}</p>}
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                 {cat.items.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="text-[var(--color-gold-primary)] mt-1">✔</span>
-                    <span className="text-gray-700 text-sm font-medium">{item}</span>
+                  <li key={idx} className="flex items-start gap-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-gold-primary)] mt-2 shrink-0 group-hover:scale-150 transition-transform duration-500" />
+                    <span className="text-white/70 text-[15px] leading-relaxed group-hover:text-white/90 transition-colors duration-500 font-light">{item}</span>
                   </li>
                 ))}
               </ul>

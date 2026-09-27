@@ -1,7 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const PhilosophySection = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
   const steps = [
     "Meet Requirements",
     "Control Risk",
@@ -11,59 +17,105 @@ const PhilosophySection = () => {
     "Improve Business Performance"
   ];
 
+  const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <section className="py-24 bg-[var(--color-primary-deep)] text-white overflow-hidden relative">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-20" />
+    <section ref={containerRef} className="py-32 bg-[#020E20] text-white overflow-hidden relative border-y border-white/5">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#073866]/30 via-[#020E20] to-[#020E20] opacity-80" />
       
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
-          className="mb-20"
-          initial={{ opacity: 0, y: 20 }}
+          className="mb-24 text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-[var(--color-gold-primary)] font-bold text-sm tracking-widest uppercase mb-6 block">
-            OUR PHILOSOPHY
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight w-full mx-auto">
-            <span className="block mb-4 text-white">Compliance + Capability + Performance</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold-light)] to-[var(--color-gold-primary)] text-4xl md:text-5xl lg:text-6xl">
+          <div className="flex justify-center items-center gap-4 mb-8">
+            <span className="w-12 h-px bg-[var(--color-gold-primary)]" />
+            <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+              Core Philosophy
+            </span>
+            <span className="w-12 h-px bg-[var(--color-gold-primary)]" />
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold leading-[1.1] tracking-tight">
+            <span className="block mb-4 text-white/90">Compliance + Capability + Performance</span>
+            <span className="block text-white font-light italic">
               = Sustainable Improvement
             </span>
           </h2>
         </motion.div>
 
-        {/* Process Flow */}
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 lg:gap-6 relative">
-          {steps.map((step, index) => (
-            <React.Fragment key={index}>
-              <motion.div 
-                className="bg-white/5 border border-white/10 hover:border-[var(--color-gold-primary)]/50 backdrop-blur-md px-6 py-4 rounded-full font-medium text-sm lg:text-base shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all cursor-default flex items-center gap-3 group"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-              >
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[var(--color-gold-primary)]/10 text-[var(--color-gold-primary)] group-hover:bg-[var(--color-gold-primary)] group-hover:text-[var(--color-primary-navy)] transition-colors text-xs font-bold">
-                  {index + 1}
-                </span>
-                <span className="text-white/90 group-hover:text-white transition-colors">{step}</span>
-              </motion.div>
-              {index < steps.length - 1 && (
+        {/* Process Flow - Desktop (Horizontal) */}
+        <div className="hidden lg:block relative max-w-6xl mx-auto mt-32 mb-20">
+          <div className="absolute top-[28px] left-[8.33%] w-[83.33%] h-[1px] bg-white/20" />
+          <motion.div 
+            className="absolute top-[28px] left-[8.33%] w-[83.33%] h-[1px] bg-[var(--color-gold-primary)] origin-left"
+            style={{ scaleX }}
+          />
+          
+          <div className="grid grid-cols-6 gap-4 relative">
+            {steps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center text-center relative group">
                 <motion.div 
-                  className="text-white/20 font-light text-xl md:text-2xl rotate-90 md:rotate-0"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
+                  className="w-14 h-14 rounded-full bg-[#031C36] border border-white/20 flex items-center justify-center text-[var(--color-gold-light)] font-heading font-bold text-lg mb-8 relative z-10 group-hover:border-[var(--color-gold-primary)] group-hover:bg-[var(--color-gold-primary)] group-hover:text-[#020E20] transition-colors duration-500 shadow-[0_0_0_8px_#020E20]"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 + 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  →
+                  {index + 1}
                 </motion.div>
-              )}
-            </React.Fragment>
-          ))}
+                <motion.span 
+                  className="text-[15px] font-heading font-semibold text-white/70 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300 max-w-[140px]"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                >
+                  {step}
+                </motion.span>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Process Flow - Mobile (Vertical) */}
+        <div className="lg:hidden relative ml-4 mt-16 pb-4">
+          <div className="absolute top-[28px] bottom-[28px] left-[27px] w-[2px] bg-white/20" />
+          <motion.div 
+            className="absolute top-[28px] bottom-[28px] left-[27px] w-[2px] bg-[var(--color-gold-primary)] origin-top"
+            style={{ scaleY }}
+          />
+          
+          <div className="flex flex-col gap-12 relative">
+            {steps.map((step, index) => (
+              <div key={index} className="flex items-center gap-8 group">
+                <motion.div 
+                  className="w-14 h-14 rounded-full bg-[#031C36] border border-white/20 flex items-center justify-center text-[var(--color-gold-light)] font-heading font-bold text-lg relative z-10 shrink-0 group-hover:border-[var(--color-gold-primary)] group-hover:bg-[var(--color-gold-primary)] group-hover:text-[#020E20] transition-colors duration-500 shadow-[0_0_0_8px_#020E20]"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  {index + 1}
+                </motion.div>
+                <motion.span 
+                  className="text-lg font-heading font-semibold text-white/80 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                >
+                  {step}
+                </motion.span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

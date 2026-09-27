@@ -11,46 +11,51 @@ const WhyDifferent = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-4"
+    <section className="py-24 lg:py-32 bg-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="mb-20 flex flex-col items-center">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
           >
-            More Than Compliance
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-600 font-light"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Our focus is not simply certification. Our focus is performance.
-          </motion.p>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                More Than Compliance
+              </span>
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-[1.1] tracking-tight mb-6">
+              Our Focus is Performance
+            </h2>
+            
+            <p className="text-[#667085] text-lg font-light max-w-2xl mx-auto">
+              We design and refine management systems that deliver measurable business results, not just certification.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {features.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-[var(--color-warm-white)] p-8 rounded-xl border-t-4 border-[var(--color-gold-primary)] shadow-lg"
+              className="group border-t border-[#E5E7EB] pt-8 hover:border-[var(--color-gold-primary)] transition-colors duration-500"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-4xl font-bold text-[var(--color-primary-navy)]/10 mb-4 font-serif">
+              <div className="text-[32px] font-heading font-light text-[#020E20]/20 mb-6 group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
                 {item.num}
               </div>
-              <h3 className="text-xl font-bold text-[var(--color-primary-navy)] mb-3">
+              <h3 className="text-xl font-heading font-bold text-[#020E20] mb-4">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-[#667085] text-[15px] leading-relaxed font-light">
                 {item.desc}
               </p>
             </motion.div>

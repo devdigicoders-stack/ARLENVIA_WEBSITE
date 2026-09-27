@@ -13,47 +13,55 @@ const ManagementSystems = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-[#F7F6F2] relative overflow-hidden">
       {/* Decorative BG */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[var(--color-warm-white)] to-transparent z-0" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/50 to-transparent z-0 pointer-events-none" />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="max-w-3xl mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-5xl font-bold text-[var(--color-primary-navy)] mb-6 leading-tight"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            Management Systems & <br />
-            <span className="text-[var(--color-gold-primary)]">Quality Consultancy</span>
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-600 font-light"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Support for organizations establishing, improving, maintaining or transitioning management systems.
-          </motion.p>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                International Standards
+              </span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-[1.1] tracking-tight mb-6">
+              Management Systems & <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold-primary)] to-[#b58c28]">
+                Quality Consultancy
+              </span>
+            </h2>
+            
+            <p className="text-[#667085] text-lg font-light leading-relaxed max-w-2xl">
+              Support for organizations establishing, improving, maintaining, or transitioning management systems to international standards.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
           {standards.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white border border-gray-200 p-8 rounded-xl hover:shadow-[0_20px_40px_rgba(3,28,54,0.08)] hover:border-[var(--color-gold-primary)]/30 transition-all duration-300 group"
+              className="bg-white border border-[#E5E7EB] p-8 hover:border-[var(--color-gold-primary)]/50 hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <h3 className="text-2xl font-bold text-[var(--color-primary-navy)] mb-3 group-hover:text-[var(--color-gold-primary)] transition-colors">
+              {/* Hover Accent */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              
+              <h3 className="text-2xl font-heading font-bold text-[#020E20] mb-3 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
                 {item.iso}
               </h3>
-              <p className="text-gray-600 text-sm font-medium leading-relaxed">
+              <p className="text-[#667085] text-[15px] leading-relaxed font-light">
                 {item.name}
               </p>
             </motion.div>

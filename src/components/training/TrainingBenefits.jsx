@@ -1,47 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBrain, FaTools, FaClipboardCheck, FaPuzzlePiece, FaExclamationTriangle, FaChartLine } from 'react-icons/fa';
 
 const TrainingBenefits = () => {
   const benefits = [
-    { title: "Better Understanding", icon: <FaBrain /> },
-    { title: "Practical Application", icon: <FaTools /> },
-    { title: "Improved Audit Capability", icon: <FaClipboardCheck /> },
-    { title: "Stronger Problem Solving", icon: <FaPuzzlePiece /> },
-    { title: "Better Risk Awareness", icon: <FaExclamationTriangle /> },
-    { title: "Improved Performance Thinking", icon: <FaChartLine /> }
+    { title: "Better Understanding", num: "01" },
+    { title: "Practical Application", num: "02" },
+    { title: "Improved Audit Capability", num: "03" },
+    { title: "Stronger Problem Solving", num: "04" },
+    { title: "Better Risk Awareness", num: "05" },
+    { title: "Improved Performance Thinking", num: "06" }
   ];
 
   return (
-    <section className="py-24 bg-[var(--color-warm-white)]">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-6"
+    <section className="py-24 lg:py-32 bg-[#020E20] text-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            What Participants Should Gain
-          </motion.h2>
-          <div className="w-24 h-1 bg-[var(--color-gold-primary)] mx-auto" />
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Learning Outcomes
+              </span>
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-white leading-[1.1] tracking-tight">
+              What Participants Should Gain
+            </h2>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="group bg-white p-8 rounded-xl border border-gray-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 hover:border-[var(--color-gold-primary)]/50 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-[#020E20] p-10 border-b border-r border-white/10 hover:bg-white/5 transition-colors duration-500 group flex flex-col justify-between aspect-[4/3] cursor-default relative overflow-hidden"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-4xl mb-6 text-[var(--color-primary-navy)]/60 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300 flex justify-center">
-                {benefit.icon}
-              </div>
-              <h3 className="text-lg font-bold text-[var(--color-primary-navy)] leading-snug group-hover:text-[var(--color-primary-corporate)] transition-colors">
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              
+              <span className="text-white/20 font-heading font-bold text-5xl mb-6 group-hover:text-[var(--color-gold-primary)]/20 transition-colors duration-500">
+                {benefit.num}
+              </span>
+              <h3 className="text-xl font-heading font-bold text-white leading-snug group-hover:text-[var(--color-gold-primary)] transition-colors duration-500 max-w-[200px]">
                 {benefit.title}
               </h3>
             </motion.div>

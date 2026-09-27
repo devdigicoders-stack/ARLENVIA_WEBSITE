@@ -1,31 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { 
+  FiArrowRight, 
+  FiLayers, 
+  FiUsers, 
+  FiTrendingUp, 
+  FiClipboard, 
+  FiRefreshCw, 
+  FiCpu 
+} from 'react-icons/fi';
 
 const ServicesSection = () => {
   const services = [
-    { num: "01", title: "Management Systems & Quality Consultancy", link: "/consultancy" },
-    { num: "02", title: "Training & Professional Development", link: "/training" },
-    { num: "03", title: "Business Performance & Improvement", link: "/consultancy" },
-    { num: "04", title: "Audit & Assessment Services", link: "/consultancy" },
-    { num: "05", title: "Process Management & Continual Improvement", link: "/consultancy" },
-    { num: "06", title: "Digital Innovation, Data & AI", link: "/digital-ai" }
+    { icon: <FiLayers />, title: "Management Systems & Quality Consultancy", summary: "Design and implementation of resilient ISO frameworks tailored to your operations.", link: "/consultancy" },
+    { icon: <FiUsers />, title: "Training & Professional Development", summary: "Practical learning programs that build actual workplace capability and competence.", link: "/training" },
+    { icon: <FiTrendingUp />, title: "Business Performance & Improvement", summary: "Data-driven strategies to reduce waste, control risk, and elevate performance.", link: "/consultancy" },
+    { icon: <FiClipboard />, title: "Audit & Assessment Services", summary: "Independent, rigorous evaluations to ensure compliance and identify opportunities.", link: "/consultancy" },
+    { icon: <FiRefreshCw />, title: "Process Management & Continual Improvement", summary: "Streamlining workflows for maximum efficiency and sustainable growth.", link: "/consultancy" },
+    { icon: <FiCpu />, title: "Digital Innovation, Data & AI", summary: "Leveraging intelligent technologies to augment human decision-making.", link: "/digital-ai" }
   ];
 
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            Solutions Built Around Performance
-          </motion.h2>
-          <div className="w-24 h-1 bg-[var(--color-gold-primary)] mx-auto" />
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-10 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Expertise
+              </span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-tight tracking-tight">
+              Solutions Built <br className="hidden md:block" /> Around Performance
+            </h2>
+          </motion.div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -39,26 +54,27 @@ const ServicesSection = () => {
             >
               <Link 
                 to={service.link}
-                className="block h-full bg-white border border-gray-100 p-10 rounded-xl shadow-[0_10px_30px_rgba(3,28,54,0.04)] hover:shadow-[0_20px_40px_rgba(3,28,54,0.08)] transition-all duration-500 group relative overflow-hidden"
+                className="block h-full bg-white border border-[#E5E7EB] p-10 shadow-sm hover:shadow-xl hover:border-transparent transition-all duration-500 group relative overflow-hidden hover:-translate-y-2"
               >
-                {/* Top Border */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-gold-primary)] transform origin-left scale-x-100 transition-transform duration-500" />
-                
-                {/* Gradient Reveal */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-navy)]/5 to-transparent opacity-100 transition-opacity duration-500" />
+                {/* Gold Top Border Reveal */}
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <span className="text-4xl font-black text-[var(--color-gold-primary)]/20 transition-colors duration-500 mb-6 font-mono">
-                    {service.num}
-                  </span>
+                  <div className="text-[40px] text-[#020E20]/20 mb-8 transition-colors duration-500 group-hover:text-[var(--color-gold-primary)]/80">
+                    {service.icon}
+                  </div>
                   
-                  <h3 className="text-xl font-bold text-[var(--color-primary-navy)] mb-4 flex-grow pr-8 leading-snug">
+                  <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-4 pr-4 leading-[1.3] transition-colors group-hover:text-[var(--color-primary-corporate)]">
                     {service.title}
                   </h3>
                   
-                  <div className="flex items-center text-[var(--color-primary-corporate)] font-bold text-sm uppercase tracking-wider mt-6">
-                    <span className="mr-2">Explore</span>
-                    <span className="transform translate-x-1 group-hover:translate-x-3 transition-transform duration-300">→</span>
+                  <p className="text-[#667085] text-[15px] leading-relaxed mb-8 flex-grow">
+                    {service.summary}
+                  </p>
+                  
+                  <div className="flex items-center text-[#020E20] group-hover:text-[var(--color-gold-primary)] font-heading font-bold text-[11px] uppercase tracking-[0.15em] transition-colors mt-auto border-t border-gray-100 pt-6">
+                    <span>Explore</span>
+                    <FiArrowRight className="ml-3 transform transition-transform duration-300 group-hover:translate-x-2" />
                   </div>
                 </div>
               </Link>

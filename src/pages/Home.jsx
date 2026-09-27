@@ -11,6 +11,7 @@ import DigitalAISection from '../components/home/DigitalAISection';
 import IndustriesSection from '../components/home/IndustriesSection';
 import WhyArlenvia from '../components/home/WhyArlenvia';
 import InsightsSection from '../components/home/InsightsSection';
+import FAQSection from '../components/home/FAQSection';
 import CTASection from '../components/common/CTASection';
 
 const Home = () => {
@@ -33,6 +34,7 @@ const Home = () => {
         <IndustriesSection />
         <WhyArlenvia />
         <InsightsSection />
+        <FAQSection />
         
         <CTASection 
           title="Ready to Turn Compliance Into Performance?"

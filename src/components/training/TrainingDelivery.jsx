@@ -1,59 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBuilding, FaUsers, FaTools } from 'react-icons/fa';
 
 const TrainingDelivery = () => {
   const modes = [
     { 
       title: "Corporate / In-House Training", 
       desc: "Delivered directly at your facility, this approach is focused entirely on your organization's specific systems, processes, and business challenges. It offers maximum relevance, confidentiality, and team alignment for your core staff.",
-      icon: <FaBuilding />
+      num: "01"
     },
     { 
       title: "Public Training Programs", 
       desc: "Open enrollment sessions that are ideal for individuals or small groups seeking standard competency development. These programs provide an excellent opportunity to network with peers from other organizations and share industry best practices.",
-      icon: <FaUsers />
+      num: "02"
     },
     { 
       title: "Customized Workshops", 
       desc: "Highly tailored, interactive sessions explicitly designed to address specific operational problems, compliance issues, or strategic competency gaps. We integrate your real-world data and documents directly into the learning experience.",
-      icon: <FaTools />
+      num: "03"
     }
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-6"
+    <section className="py-24 lg:py-32 bg-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            Flexible Delivery Options
-          </motion.h2>
-          <div className="w-24 h-1 bg-[var(--color-gold-primary)] mx-auto" />
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Delivery Options
+              </span>
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-[1.1] tracking-tight">
+              Flexible Training Delivery
+            </h2>
+          </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {modes.map((mode, index) => (
             <motion.div
               key={index}
-              className="bg-[var(--color-warm-white)] p-10 rounded-2xl border-t-4 border-[var(--color-primary-corporate)] hover:border-[var(--color-gold-primary)] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2 min-h-[340px] flex flex-col group"
+              className="bg-[#F7F6F2] p-10 lg:p-12 relative overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-700 border border-[#E5E7EB] hover:border-[var(--color-gold-primary)]/50 flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-4xl text-[var(--color-primary-navy)]/20 mb-6 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
-                {mode.icon}
+              {/* Decorative line */}
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+              
+              <div className="text-3xl font-heading font-light text-[#020E20]/20 mb-6 group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+                {mode.num}
               </div>
-              <h3 className="text-2xl font-bold text-[var(--color-primary-navy)] mb-4 leading-tight">
+              
+              <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-6 leading-tight group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
                 {mode.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed text-base">
+              
+              <p className="text-[#667085] text-[15px] leading-relaxed font-light">
                 {mode.desc}
               </p>
             </motion.div>

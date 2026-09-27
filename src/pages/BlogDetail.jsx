@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import CTASection from '../components/common/CTASection';
 import { initialBlogs } from './Insights';
 import BlogCard from '../components/insights/BlogCard';
+import { FiMail, FiArrowRight } from 'react-icons/fi';
 
 const BlogDetail = () => {
   const { slug } = useParams();
@@ -110,7 +111,7 @@ const BlogDetail = () => {
                   <div className="flex gap-3">
                     <button className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors font-bold">in</button>
                     <button className="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors font-bold">f</button>
-                    <button className="w-10 h-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-gray-600 hover:text-white transition-colors font-bold">✉</button>
+                    <button className="w-10 h-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-gray-600 hover:text-white transition-colors font-bold"><FiMail /></button>
                   </div>
                 </div>
 
@@ -135,7 +136,7 @@ const BlogDetail = () => {
                 <div className="w-16 h-1 bg-[var(--color-gold-primary)]" />
               </div>
               <Link to="/insights" className="text-[var(--color-gold-primary)] font-bold hover:text-[var(--color-primary-navy)] transition-colors">
-                View All →
+                View All <FiArrowRight className="inline ml-1" />
               </Link>
             </div>
             

@@ -46,10 +46,10 @@ const Header = () => {
     { name: 'Insights', path: '/insights' },
   ];
 
-  const headerClass = `fixed w-full z-50 transition-all duration-300 ${
+  const headerClass = `fixed w-full z-50 transition-all duration-500 border-b border-white/5 backdrop-blur-sm ${
     isScrolled || !isHomePage 
-      ? 'bg-[var(--color-primary-navy)] py-4 shadow-lg' 
-      : 'bg-transparent py-6'
+      ? 'bg-[#020E20]/95 py-3 shadow-lg shadow-black/10' 
+      : 'bg-transparent py-5'
   }`;
 
   return (
@@ -61,12 +61,12 @@ const Header = () => {
             <img 
               src={logoImage} 
               alt="Arlenvia Logo" 
-              className="h-10 md:h-12 lg:h-16 object-contain filter drop-shadow-md" 
+              className={`h-9 md:h-11 lg:h-12 object-contain filter drop-shadow-lg transition-transform duration-500 ${isScrolled ? 'scale-95' : 'scale-100'}`} 
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 text-lg text-white/90 font-medium ml-auto mr-8">
+          <nav className="hidden lg:flex items-center gap-10 text-[15px] font-heading font-semibold text-white/95 ml-auto mr-10 tracking-wide uppercase">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
@@ -76,7 +76,7 @@ const Header = () => {
                 }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-[var(--color-gold-primary)] transition-all duration-300 ${
+                <span className={`absolute -bottom-2 left-0 h-[2px] bg-[var(--color-gold-primary)] transition-all duration-300 ${
                   location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
@@ -86,15 +86,15 @@ const Header = () => {
           {/* Desktop Contact Button */}
           <div className="hidden lg:block">
             <Link to="/contact">
-              <Button variant="outline" className="!py-2 !px-5 text-base uppercase tracking-wide">
-                Contact Us
+              <Button variant="outline" className="!py-2.5 !px-6 text-[13px] uppercase tracking-widest font-heading font-bold border-white/20 hover:border-[var(--color-gold-primary)] hover:text-[var(--color-gold-primary)] hover:bg-transparent transition-all">
+                Book a Consultation
               </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Toggle Button */}
           <button 
-            className="lg:hidden text-[var(--color-gold-primary)] cursor-pointer z-50 relative p-2 focus:outline-none"
+            className="lg:hidden text-white hover:text-[var(--color-gold-primary)] transition-colors cursor-pointer z-50 relative p-2 focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -111,7 +111,7 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            className="fixed inset-0 z-40 bg-[var(--color-primary-navy)] lg:hidden flex flex-col"
+            className="fixed inset-0 z-40 bg-[#020E20]/95 backdrop-blur-xl lg:hidden flex flex-col"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -146,8 +146,8 @@ const Header = () => {
                 transition={{ delay: 0.1 * navLinks.length, duration: 0.3 }}
               >
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <button className="bg-[var(--color-gold-primary)] text-[var(--color-primary-navy)] font-bold py-4 px-10 rounded-full text-lg w-full max-w-sm mx-auto shadow-lg shadow-[var(--color-gold-primary)]/20 active:scale-95 transition-transform">
-                    Contact Us
+                  <button className="bg-[var(--color-gold-primary)] text-[#020E20] font-heading font-bold py-4 px-10 rounded-none text-[15px] uppercase tracking-widest w-full max-w-sm mx-auto shadow-xl hover:shadow-[var(--color-gold-primary)]/20 active:scale-95 transition-all">
+                    Book a Consultation
                   </button>
                 </Link>
               </motion.div>

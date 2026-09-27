@@ -1,74 +1,70 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Button from '../common/Button';
 import aboutImage from '../../assets/images/about_arlenvia.jpg';
 
 const WhoWeAre = () => {
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-warm-white)]">
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        {/* Left Side: Image & Badge */}
-        <motion.div 
-          className="relative"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl relative group">
+    <section className="py-24 lg:py-32 bg-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center">
+          
+          {/* Left Side: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
+          >
+            <div className="mb-6 flex items-center gap-4">
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Who We Are
+              </span>
+              <div className="h-px w-12 bg-[var(--color-gold-primary)]/50" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] mb-8 leading-[1.1] tracking-tight">
+              Turning Management Systems Into Real Business Value
+            </h2>
+            
+            <div className="space-y-6 text-[#667085] text-lg leading-relaxed mb-10 font-light">
+              <p>
+                At Arlenvia Training Consultancy Services, we believe that compliance should not be an administrative burden. It should be a strategic tool that drives organizational capability and genuine business performance.
+              </p>
+              <p>
+                We go beyond simply helping you achieve certification. We connect compliance to better decision-making, operational efficiency, robust risk management, and overall sustainable improvement. Our solutions are designed to integrate seamlessly with your core business objectives.
+              </p>
+            </div>
+            
+            <Link 
+              to="/consultancy" 
+              className="inline-flex items-center gap-4 group"
+            >
+              <span className="text-[#020E20] font-heading font-bold uppercase tracking-widest text-[13px] border-b border-[#020E20] pb-1 group-hover:text-[var(--color-gold-primary)] group-hover:border-[var(--color-gold-primary)] transition-colors">
+                Explore Our Services
+              </span>
+              <span className="text-[#020E20] group-hover:text-[var(--color-gold-primary)] group-hover:translate-x-1 transition-all">→</span>
+            </Link>
+          </motion.div>
+
+          {/* Right Side: Image Reveal */}
+          <motion.div 
+            className="relative aspect-square lg:aspect-[4/5] overflow-hidden order-1 lg:order-2"
+            initial={{ opacity: 0, clipPath: 'inset(10% 10% 10% 10%)' }}
+            whileInView={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          >
             <img 
               src={aboutImage}
               alt="Consultancy Meeting"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] hover:scale-[1.05]"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary-navy)]/30 to-transparent mix-blend-overlay" />
-          </div>
-          
-          {/* Floating Badge */}
-          <motion.div 
-            className="absolute -bottom-6 -right-6 lg:-right-10 bg-white p-6 rounded-xl shadow-[0_20px_50px_rgba(3,28,54,0.1)] max-w-[280px]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="w-12 h-12 bg-[var(--color-gold-primary)]/10 rounded-full flex items-center justify-center mb-4 text-[var(--color-gold-primary)] text-2xl">
-              ✦
-            </div>
-            <p className="font-semibold text-[var(--color-primary-navy)] text-lg leading-tight">
-              Practical • Relevant • Results-Oriented
-            </p>
+            <div className="absolute inset-0 bg-[#073866]/10 mix-blend-multiply" />
           </motion.div>
-        </motion.div>
 
-        {/* Right Side: Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="text-[var(--color-gold-primary)] font-bold tracking-wider text-sm uppercase mb-4 block">
-            Who We Are
-          </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-6 leading-tight">
-            Turning Management-System Requirements Into Real Business Value
-          </h2>
-          <div className="space-y-4 text-gray-600 leading-relaxed mb-8">
-            <p>
-              At Arlenvia Training Consultancy Services, we believe that compliance should not be an administrative burden. It should be a strategic tool that drives organizational capability and business performance.
-            </p>
-            <p>
-              We go beyond simply helping you achieve certification. We connect compliance to better decision-making, operational efficiency, robust risk management, enhanced customer confidence, and overall sustainable improvement. Our solutions are designed to integrate seamlessly with your core business objectives.
-            </p>
-          </div>
-          <Link to="/consultancy">
-            <Button variant="primary">
-              Explore Our Services <span className="ml-2">→</span>
-            </Button>
-          </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -35,54 +35,60 @@ const IndustriesSection = () => {
   return (
     <section className="py-24 bg-white relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <motion.h2 
-            className="text-3xl lg:text-4xl font-bold text-[var(--color-primary-navy)] mb-4"
+        <div className="mb-16 flex flex-col items-center">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
           >
-            Industries We Serve
-          </motion.h2>
-          <div className="w-24 h-1 bg-[var(--color-gold-primary)] mx-auto" />
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+              <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                Sectors
+              </span>
+              <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-tight tracking-tight">
+              Industries We Support
+            </h2>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {industries.map((industry, index) => (
             <motion.div
               key={index}
-              className="relative h-64 lg:h-80 rounded-2xl overflow-hidden group cursor-default shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-[var(--color-gold-primary)]/50"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="relative h-64 lg:h-[340px] rounded-sm overflow-hidden group cursor-pointer border border-[#E5E7EB] hover:border-[var(--color-gold-primary)]/30 transition-colors duration-500"
             >
-              {/* Background Image */}
-              <img 
-                src={industry.img}
-                alt={industry.name}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              {/* Dark Overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-deep)] via-[var(--color-primary-navy)]/80 to-[var(--color-primary-navy)]/30 group-hover:via-[var(--color-primary-navy)]/60 transition-colors duration-500" />
-              
-              {/* Large Faint Icon Background */}
-              <div className="absolute -right-8 -bottom-8 text-[var(--color-gold-primary)]/10 group-hover:text-[var(--color-gold-primary)]/20 transition-colors duration-500 pointer-events-none">
-                <industry.Icon size={180} />
-              </div>
-              
-              {/* Content */}
-              <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end">
-                <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-4 group-hover:-translate-y-2 group-hover:bg-[var(--color-gold-primary)] transition-all duration-300 border border-white/20">
-                  <industry.Icon className="text-white text-xl" />
+                {/* Background Image */}
+                <img 
+                  src={industry.img}
+                  alt={industry.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.2s] ease-[0.16,1,0.3,1] group-hover:scale-[1.07]"
+                />
+                
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-[#020E20]/50 group-hover:bg-[#073866]/70 transition-colors duration-700 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020E20]/90 via-[#020E20]/40 to-transparent group-hover:from-[#020E20] transition-colors duration-700" />
+                
+                {/* Content */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <h3 className="text-white font-heading font-bold text-xl leading-snug transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:text-[var(--color-gold-light)]">
+                    {industry.name}
+                  </h3>
+                  
+                  {/* Arrow Reveal */}
+                  <div className="absolute bottom-6 right-8 opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
+                    <span className="text-[var(--color-gold-primary)] text-xl">→</span>
+                  </div>
                 </div>
-                <h3 className="text-white font-bold text-lg lg:text-xl leading-tight group-hover:-translate-y-2 transition-transform duration-300">
-                  {industry.name}
-                </h3>
-                <div className="w-0 h-1 bg-[var(--color-gold-primary)] mt-4 group-hover:w-12 transition-all duration-500" />
-              </div>
-            </motion.div>
+              </motion.div>
           ))}
         </div>
       </div>
