@@ -48,22 +48,30 @@ const DataAnalytics = () => {
 
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24">
           {/* Left: Visual Flow */}
-          <div className="relative">
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-[#E5E7EB]" />
-            <div className="flex flex-col gap-6 relative">
+          <div className="relative h-full py-2">
+            <div className="absolute left-4 top-6 bottom-6 w-px bg-[#E5E7EB]" />
+            <motion.div 
+              className="absolute left-4 top-6 bottom-6 w-px bg-[var(--color-gold-primary)] origin-top"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+            />
+            
+            <div className="flex flex-col justify-between h-full relative gap-8 lg:gap-0">
               {steps.map((step, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-6 group cursor-default"
+                  className="flex items-center gap-6 group cursor-default bg-[#F7F6F2] py-2"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.15 }}
                 >
-                  <div className="w-8 h-8 rounded-full bg-white border border-[#E5E7EB] flex items-center justify-center z-10 group-hover:border-[var(--color-gold-primary)] transition-colors duration-300">
-                    <div className="w-2 h-2 rounded-full bg-[var(--color-gold-primary)]/40 group-hover:bg-[var(--color-gold-primary)] group-hover:scale-150 transition-all duration-300" />
+                  <div className="w-8 h-8 rounded-full bg-white border-[2px] border-[#E5E7EB] flex items-center justify-center z-10 group-hover:border-[var(--color-gold-primary)] transition-colors duration-500 shadow-[0_0_0_8px_#F7F6F2]">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[var(--color-gold-primary)]/40 group-hover:bg-[var(--color-gold-primary)] group-hover:scale-125 transition-all duration-500" />
                   </div>
-                  <div className="text-[17px] font-heading font-bold text-[#020E20] group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
+                  <div className="text-[18px] font-heading font-bold text-[#020E20] group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
                     {step}
                   </div>
                 </motion.div>

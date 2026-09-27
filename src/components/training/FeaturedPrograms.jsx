@@ -1,11 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { FiClock, FiMapPin, FiArrowRight } from 'react-icons/fi';
+import { FiClock, FiMapPin } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const FeaturedPrograms = () => {
@@ -77,65 +72,39 @@ const FeaturedPrograms = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-6 px-6 lg:mx-0 lg:px-0"
         >
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="pb-20 px-4 !overflow-visible"
-          >
-            {programs.map((prog, index) => (
-              <SwiperSlide key={index} className="h-auto">
-                <div className="bg-white border border-[#E5E7EB] p-10 h-full flex flex-col group hover:border-[var(--color-gold-primary)]/50 hover:shadow-xl transition-all duration-500 relative overflow-hidden cursor-grab active:cursor-grabbing">
-                  {/* Accent Line */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                  
-                  <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-6 leading-snug group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
-                    {prog.title}
-                  </h3>
-                  
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    <span className="inline-flex items-center gap-2 py-1.5 px-3 bg-[#F7F6F2] text-[#020E20] text-xs font-bold tracking-wider uppercase">
-                      <FiClock className="text-[var(--color-gold-primary)]" /> {prog.duration}
-                    </span>
-                    <span className="inline-flex items-center gap-2 py-1.5 px-3 bg-[#F7F6F2] text-[#020E20] text-xs font-bold tracking-wider uppercase">
-                      <FiMapPin className="text-[var(--color-gold-primary)]" /> {prog.mode}
-                    </span>
-                  </div>
-                  
-                  <p className="text-[#667085] text-[15px] leading-relaxed flex-grow mb-10 font-light">
-                    {prog.desc}
-                  </p>
-                  
-                  <Link to="/contact" className="text-[#020E20] font-heading font-bold text-[13px] uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 group-hover:text-[var(--color-gold-primary)] transition-all mt-auto w-fit">
-                    Request Details <span className="text-[16px] leading-none pb-0.5">→</span>
-                  </Link>
+          {programs.map((prog, index) => (
+            <div key={index} className="min-w-[85vw] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[400px] flex-shrink-0 snap-start h-auto flex flex-col">
+              <div className="bg-white border border-[#E5E7EB] p-10 flex-grow flex flex-col group hover:border-[var(--color-gold-primary)]/50 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
+                {/* Accent Line */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                
+                <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-6 leading-snug group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
+                  {prog.title}
+                </h3>
+                
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <span className="inline-flex items-center gap-2 py-1.5 px-3 bg-[#F7F6F2] text-[#020E20] text-xs font-bold tracking-wider uppercase">
+                    <FiClock className="text-[var(--color-gold-primary)] shrink-0" /> {prog.duration}
+                  </span>
+                  <span className="inline-flex items-center gap-2 py-1.5 px-3 bg-[#F7F6F2] text-[#020E20] text-xs font-bold tracking-wider uppercase">
+                    <FiMapPin className="text-[var(--color-gold-primary)] shrink-0" /> {prog.mode}
+                  </span>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                
+                <p className="text-[#667085] text-[15px] leading-relaxed flex-grow mb-10 font-light">
+                  {prog.desc}
+                </p>
+                
+                <Link to="/contact" className="text-[#020E20] font-heading font-bold text-[13px] uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 group-hover:text-[var(--color-gold-primary)] transition-all mt-auto w-fit">
+                  Request Details <span className="text-[16px] leading-none pb-0.5">→</span>
+                </Link>
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
-      
-      <style dangerouslySetInnerHTML={{__html: `
-        .swiper-pagination-bullet { background: rgba(2, 14, 32, 0.2); width: 10px; height: 10px; transition: all 0.3s ease; }
-        .swiper-pagination-bullet-active { background: var(--color-gold-primary); transform: scale(1.2); }
-        .swiper-button-next, .swiper-button-prev { color: var(--color-primary-navy); transform: scale(0.6); opacity: 0.5; transition: opacity 0.3s; }
-        .swiper-button-next:hover, .swiper-button-prev:hover { opacity: 1; }
-        .swiper-button-next { right: -20px; }
-        .swiper-button-prev { left: -20px; }
-        @media (max-width: 1024px) {
-           .swiper-button-next, .swiper-button-prev { display: none; }
-        }
-      `}} />
     </section>
   );
 };

@@ -35,24 +35,30 @@ const TrainingBenefits = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="bg-[#020E20] p-10 border-b border-r border-white/10 hover:bg-white/5 transition-colors duration-500 group flex flex-col justify-between aspect-[4/3] cursor-default relative overflow-hidden"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              className="bg-white/5 p-10 border border-white/10 hover:border-[var(--color-gold-primary)]/50 hover:bg-white/10 hover:-translate-y-1 transition-all duration-500 group flex flex-col justify-between h-[240px] cursor-default relative overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="absolute top-0 left-0 w-full h-0.5 bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              
-              <span className="text-white/20 font-heading font-bold text-5xl mb-6 group-hover:text-[var(--color-gold-primary)]/20 transition-colors duration-500">
+              {/* Huge Background Number */}
+              <div className="absolute -right-4 -bottom-6 text-[120px] font-heading font-bold text-white/5 group-hover:text-[var(--color-gold-primary)]/10 transition-colors duration-500 leading-none z-0">
                 {benefit.num}
-              </span>
-              <h3 className="text-xl font-heading font-bold text-white leading-snug group-hover:text-[var(--color-gold-primary)] transition-colors duration-500 max-w-[200px]">
-                {benefit.title}
-              </h3>
+              </div>
+              
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                  Outcome {benefit.num}
+                </span>
+                
+                <h3 className="text-[22px] font-heading font-semibold text-white leading-snug group-hover:text-[var(--color-gold-primary)] transition-colors duration-500 max-w-[220px]">
+                  {benefit.title}
+                </h3>
+              </div>
             </motion.div>
           ))}
         </div>

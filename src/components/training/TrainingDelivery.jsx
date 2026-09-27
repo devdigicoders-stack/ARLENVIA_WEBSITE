@@ -48,20 +48,17 @@ const TrainingDelivery = () => {
           {modes.map((mode, index) => (
             <motion.div
               key={index}
-              className="bg-[#F7F6F2] p-10 lg:p-12 relative overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-700 border border-[#E5E7EB] hover:border-[var(--color-gold-primary)]/50 flex flex-col"
+              className="bg-white p-10 lg:p-12 relative overflow-hidden shadow-xl border border-[var(--color-gold-primary)]/50 flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Decorative line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
-              
-              <div className="text-3xl font-heading font-light text-[#020E20]/20 mb-6 group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+              <div className="text-3xl font-heading font-light text-[var(--color-gold-primary)] mb-6">
                 {mode.num}
               </div>
               
-              <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-6 leading-tight group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+              <h3 className="text-[22px] font-heading font-bold text-[var(--color-gold-primary)] mb-6 leading-tight">
                 {mode.title}
               </h3>
               

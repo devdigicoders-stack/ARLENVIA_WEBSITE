@@ -63,24 +63,21 @@ const DigitalCapabilities = () => {
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 p-10 relative overflow-hidden group hover:border-[var(--color-gold-primary)]/50 transition-all duration-700 hover:shadow-2xl flex flex-col"
+              className="bg-white/5 backdrop-blur-sm border border-[var(--color-gold-primary)]/30 p-10 relative overflow-hidden transition-all duration-700 hover:shadow-2xl hover:-translate-y-1 hover:border-[var(--color-gold-primary)]/60 flex flex-col h-full"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Decorative line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
-              
-              <div className="text-4xl font-heading font-light text-white/10 mb-6 group-hover:text-[var(--color-gold-primary)]/30 transition-colors duration-500">
+              <div className="text-[32px] font-heading font-light text-[var(--color-gold-primary)] mb-6">
                 {card.num}
               </div>
               
-              <h3 className="text-[20px] font-heading font-bold text-white mb-4 leading-tight group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+              <h3 className="text-[22px] font-heading font-bold text-[var(--color-gold-primary)] mb-4 leading-tight">
                 {card.title}
               </h3>
               
-              <p className="text-white/60 text-[15px] leading-relaxed font-light mt-auto">
+              <p className="text-white/70 text-[15px] leading-relaxed font-light mt-auto">
                 {card.desc}
               </p>
             </motion.div>

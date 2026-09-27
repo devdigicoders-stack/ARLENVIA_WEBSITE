@@ -45,16 +45,16 @@ const ConsultancyApproach = () => {
 
         <div className="relative">
           {/* Horizontal Line Background for Desktop */}
-          <div className="hidden lg:block absolute top-[40px] left-[5%] w-[90%] h-px bg-[#E5E7EB] -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-[40px] left-[8.33%] w-[83.33%] h-px bg-[#E5E7EB] -translate-y-1/2" />
           
           {/* Horizontal Scroll Progress Line */}
           <motion.div 
-            className="hidden lg:block absolute top-[40px] left-[5%] h-[2px] bg-[var(--color-gold-primary)] -translate-y-1/2 origin-left z-0"
-            style={{ width: '90%', scaleX: lineWidth }}
+            className="hidden lg:block absolute top-[40px] left-[8.33%] h-[2px] bg-[var(--color-gold-primary)] -translate-y-1/2 origin-left z-0"
+            style={{ width: '83.33%', scaleX: lineWidth }}
           />
           
           {/* Vertical Line for Mobile */}
-          <div className="lg:hidden absolute top-0 left-[40px] w-px h-full bg-[#E5E7EB]" />
+          <div className="lg:hidden absolute top-[40px] bottom-[40px] left-[40px] w-px bg-[#E5E7EB]" />
           
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-12 lg:gap-8 relative z-10">
             {steps.map((item, index) => (
@@ -67,7 +67,7 @@ const ConsultancyApproach = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Node */}
-                <div className="w-[80px] h-[80px] shrink-0 rounded-full bg-white border border-[#E5E7EB] group-hover:border-[var(--color-gold-primary)] flex items-center justify-center text-xl font-heading font-light text-[#020E20]/30 group-hover:text-[var(--color-gold-primary)] transition-all duration-500 shadow-sm lg:mb-8 relative z-10">
+                <div className="w-[80px] h-[80px] shrink-0 rounded-full bg-white border border-[#E5E7EB] group-hover:border-[var(--color-gold-primary)] flex items-center justify-center text-[28px] font-heading font-semibold text-[#020E20]/40 group-hover:text-[var(--color-gold-primary)] transition-all duration-500 shadow-sm lg:mb-8 relative z-10 shadow-[0_0_0_8px_white]">
                   {item.num}
                   {/* Subtle pulse ring on hover */}
                   <div className="absolute inset-0 rounded-full border border-[var(--color-gold-primary)] scale-100 group-hover:scale-125 opacity-0 group-hover:opacity-10 transition-all duration-700" />

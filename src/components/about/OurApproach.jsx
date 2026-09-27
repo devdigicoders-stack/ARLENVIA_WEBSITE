@@ -46,15 +46,25 @@ const OurApproach = () => {
 
         <div className="relative">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-[18px] left-0 w-full h-[1px] bg-white/10" />
+          <div className="hidden lg:block absolute top-[28px] left-[8.33%] w-[83.33%] h-[1px] bg-white/10" />
           
           {/* Animated Fill Line (Desktop) */}
           <motion.div 
-            className="hidden lg:block absolute top-[18px] left-0 h-[2px] bg-[var(--color-gold-primary)] origin-left z-0"
+            className="hidden lg:block absolute top-[28px] left-[8.33%] w-[83.33%] h-[1px] bg-[var(--color-gold-primary)] origin-left z-0"
             style={{ scaleX }}
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-12 gap-x-6 relative z-10">
+          {/* Connecting Line (Mobile) */}
+          <div className="lg:hidden absolute top-[28px] bottom-[28px] left-[27px] w-[1px] bg-white/10" />
+          
+          {/* Animated Fill Line (Mobile) */}
+          <motion.div 
+            className="lg:hidden absolute top-[28px] bottom-[28px] left-[27px] w-[1px] bg-[var(--color-gold-primary)] origin-top z-0"
+            style={{ scaleX }}
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-12 gap-x-6 relative z-10 pl-16 lg:pl-0">
+            {/* On mobile, we add pl-16 so the text is pushed right of the line, which is at left-[27px] */}
             {approaches.map((item, index) => (
               <motion.div 
                 key={index}
@@ -65,12 +75,13 @@ const OurApproach = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Node */}
-                <div className="w-10 h-10 rounded-full bg-[#020E20] border-[4px] border-[#020E20] ring-1 ring-white/20 flex items-center justify-center mb-6 z-10 group-hover:ring-[var(--color-gold-primary)] transition-colors duration-500">
-                  <div className="w-2 h-2 rounded-full bg-[var(--color-gold-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute lg:static left-[-64px] top-0 w-14 h-14 rounded-full bg-[#020E20] border-[4px] border-[#020E20] ring-1 ring-white/20 flex items-center justify-center mb-6 z-10 group-hover:ring-[var(--color-gold-primary)] group-hover:bg-[#031C36] transition-colors duration-500 shadow-[0_0_0_8px_#020E20]">
+                  <span className="font-heading font-semibold text-[16px] text-white/30 group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+                    {item.num}
+                  </span>
                 </div>
                 
-                <h3 className="text-[20px] font-heading font-bold mb-3 text-white">
-                  <span className="text-[var(--color-gold-primary)] mr-2 font-light">{item.num}</span> 
+                <h3 className="text-[20px] font-heading font-bold mb-3 text-white mt-1 lg:mt-0">
                   {item.title}
                 </h3>
                 

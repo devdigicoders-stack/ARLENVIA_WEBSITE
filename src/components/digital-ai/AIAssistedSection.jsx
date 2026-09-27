@@ -39,22 +39,19 @@ const AIAssistedSection = () => {
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className="group bg-white p-10 hover:bg-[#F7F6F2] transition-all duration-500 relative overflow-hidden flex flex-col items-center justify-center"
+              className="bg-[#F7F6F2] p-10 transition-all duration-500 relative overflow-hidden flex flex-col items-center justify-center border-t-[2px] border-[var(--color-gold-primary)]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Subtle tech background on hover */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" />
-              
               <div className="relative z-10 w-full">
-                <div className="w-14 h-14 bg-[#F7F6F2] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#020E20] transition-colors duration-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6 text-[#020E20] group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+                <div className="w-14 h-14 bg-[#020E20] rounded-full flex items-center justify-center mx-auto mb-8">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6 text-[var(--color-gold-primary)]">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z" />
                   </svg>
                 </div>
-                <h3 className="text-[17px] font-heading font-bold text-[#020E20] mb-4 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">{card.title}</h3>
+                <h3 className="text-[17px] font-heading font-bold text-[var(--color-gold-primary)] mb-4">{card.title}</h3>
                 <p className="text-[#667085] text-[15px] leading-relaxed font-light">{card.desc}</p>
               </div>
             </motion.div>

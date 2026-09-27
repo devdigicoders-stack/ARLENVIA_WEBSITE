@@ -32,7 +32,7 @@ const CorePhilosophy = () => {
           
           <motion.div 
             className="flex min-w-max gap-8 items-center py-4"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: ["-50%", "0%"] }}
             transition={{
               x: {
                 repeat: Infinity,
