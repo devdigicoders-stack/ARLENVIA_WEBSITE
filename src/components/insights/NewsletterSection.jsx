@@ -25,8 +25,8 @@ const NewsletterSection = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Decorative Elements */}
-          <div className="absolute top-0 left-0 w-[2px] h-0 bg-[var(--color-gold-primary)] group-hover:h-full transition-all duration-700 ease-out" />
-          <div className="absolute bottom-0 right-0 w-[2px] h-0 bg-[var(--color-gold-primary)] group-hover:h-full transition-all duration-700 ease-out" />
+          <div className="absolute top-0 left-0 w-[2px] h-full bg-[var(--color-gold-primary)]" />
+          <div className="absolute bottom-0 right-0 w-[2px] h-full bg-[var(--color-gold-primary)]" />
           
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center gap-4 mb-8">
@@ -56,10 +56,9 @@ const NewsletterSection = () => {
               />
               <button 
                 type="submit" 
-                className="group relative inline-flex items-center justify-center bg-[#020E20] text-white px-8 py-3 font-heading font-bold text-[12px] uppercase tracking-widest overflow-hidden whitespace-nowrap min-w-[140px]"
+                className="inline-flex items-center justify-center bg-[var(--color-gold-primary)] text-[#020E20] px-8 py-3 font-heading font-bold text-[12px] uppercase tracking-widest whitespace-nowrap min-w-[140px] hover:bg-[#020E20] hover:text-white transition-colors duration-500"
               >
-                <span className="absolute inset-0 w-full h-full bg-[var(--color-gold-primary)] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
-                <span className="relative z-10 group-hover:text-[#020E20] transition-colors duration-500">
+                <span>
                   {subscribed ? "Subscribed" : "Subscribe"}
                 </span>
               </button>

@@ -33,13 +33,13 @@ const DigitalUseCases = () => {
           {useCases.map((useCase, index) => (
             <motion.div
               key={index}
-              className="bg-white border border-[#E5E7EB] px-8 py-4 hover:bg-[#020E20] group transition-all duration-500 cursor-default shadow-sm hover:shadow-xl"
+              className="bg-[#020E20] border border-[#020E20] px-8 py-4 transition-all duration-500 cursor-default shadow-xl"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <span className="font-heading font-bold text-[13px] tracking-widest uppercase text-[#020E20] group-hover:text-white transition-colors duration-500">
+              <span className="font-heading font-bold text-[13px] tracking-widest uppercase text-white transition-colors duration-500">
                 {useCase}
               </span>
             </motion.div>

@@ -62,18 +62,18 @@ const PerformanceConsultancy = () => {
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className="bg-[#020E20] p-6 lg:p-8 flex flex-col justify-between group hover:bg-[var(--color-gold-primary)] transition-colors duration-500"
+              className="bg-[#020E20] p-6 lg:p-8 flex flex-col justify-between"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center mb-12 text-[var(--color-gold-primary)] group-hover:border-[#020E20]/20 group-hover:text-[#020E20] transition-colors duration-500">
+              <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center mb-12 text-[var(--color-gold-primary)]">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
               </div>
-              <h3 className="font-heading font-bold text-[17px] leading-snug text-white group-hover:text-[#020E20] transition-colors duration-500">{card}</h3>
+              <h3 className="font-heading font-bold text-[17px] leading-snug text-white">{card}</h3>
             </motion.div>
           ))}
         </div>
@@ -86,14 +86,14 @@ const PerformanceConsultancy = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 text-[15px] font-heading font-bold uppercase tracking-widest text-white/50 flex-wrap">
-            <span className="hover:text-[var(--color-gold-primary)] transition-colors cursor-default">Are Processes Compliant?</span>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 text-[15px] font-heading font-bold uppercase tracking-widest text-[var(--color-gold-primary)] flex-wrap">
+            <span className="cursor-default">Are Processes Compliant?</span>
             <span className="hidden md:inline text-white/10">|</span>
-            <span className="hover:text-[var(--color-gold-primary)] transition-colors cursor-default">Are They Effective?</span>
+            <span className="cursor-default">Are They Effective?</span>
             <span className="hidden md:inline text-white/10">|</span>
-            <span className="hover:text-[var(--color-gold-primary)] transition-colors cursor-default">Are They Efficient?</span>
+            <span className="cursor-default">Are They Efficient?</span>
             <span className="hidden md:inline text-white/10">|</span>
-            <span className="hover:text-[var(--color-gold-primary)] transition-colors cursor-default">Are They Creating Value?</span>
+            <span className="cursor-default">Are They Creating Value?</span>
           </div>
         </motion.div>
       </div>

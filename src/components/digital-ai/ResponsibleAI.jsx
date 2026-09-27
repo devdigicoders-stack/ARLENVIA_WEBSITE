@@ -39,18 +39,18 @@ const ResponsibleAI = () => {
           {principles.map((principle, index) => (
             <motion.div
               key={index}
-              className="bg-white/5 backdrop-blur-md border border-white/10 px-8 py-8 hover:bg-[var(--color-gold-primary)] hover:border-[var(--color-gold-primary)] transition-all duration-500 group flex flex-col items-center min-w-[200px]"
+              className="bg-[var(--color-gold-primary)] border border-[var(--color-gold-primary)] px-8 py-8 transition-all duration-500 flex flex-col items-center min-w-[200px]"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="text-[var(--color-gold-primary)] mb-6 group-hover:text-[#020E20] transition-colors duration-500">
+              <div className="text-[#020E20] mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-10 h-10">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
               </div>
-              <h3 className="text-[15px] font-heading font-bold text-white uppercase tracking-widest group-hover:text-[#020E20] transition-colors duration-500">{principle}</h3>
+              <h3 className="text-[15px] font-heading font-bold text-[#020E20] uppercase tracking-widest">{principle}</h3>
             </motion.div>
           ))}
         </div>

@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiCpu, FiShield, FiTrendingUp, FiUsers, FiLock, FiArrowUpRight } from 'react-icons/fi';
 
 const WhyArlenviaDigital = () => {
   const cards = [
-    { title: "Practical Implementation", desc: "Digital solutions focused on what actually works in your daily operations." },
-    { title: "Quality & Compliance Understanding", desc: "We know the requirements, ensuring digital tools enhance compliance." },
-    { title: "Performance-Focused", desc: "Every tool is designed to yield measurable business improvements." },
-    { title: "Human-Centered AI", desc: "Technology to support and enhance your team, not replace their judgment." },
-    { title: "Responsible Governance", desc: "Ensuring data integrity, confidentiality, and clear accountability." },
-    { title: "Sustainable Improvement", desc: "Building digital capability that continues to add value long-term." }
+    { title: "Practical Implementation", desc: "Digital solutions focused on what actually works in your daily operations.", icon: FiCpu },
+    { title: "Quality & Compliance Understanding", desc: "We know the requirements, ensuring digital tools enhance compliance.", icon: FiShield },
+    { title: "Performance-Focused", desc: "Every tool is designed to yield measurable business improvements.", icon: FiTrendingUp },
+    { title: "Human-Centered AI", desc: "Technology to support and enhance your team, not replace their judgment.", icon: FiUsers },
+    { title: "Responsible Governance", desc: "Ensuring data integrity, confidentiality, and clear accountability.", icon: FiLock },
+    { title: "Sustainable Improvement", desc: "Building digital capability that continues to add value long-term.", icon: FiArrowUpRight }
   ];
 
   return (
@@ -48,8 +49,8 @@ const WhyArlenviaDigital = () => {
               {/* Decorative line */}
               <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
               
-              <div className="w-10 h-10 bg-white shadow-sm flex items-center justify-center mb-6 group-hover:bg-[#020E20] transition-colors duration-500">
-                <div className="w-2 h-2 bg-[var(--color-gold-primary)]" />
+              <div className="w-12 h-12 bg-white shadow-sm flex items-center justify-center mb-6 group-hover:bg-[#020E20] transition-colors duration-500">
+                <card.icon className="w-5 h-5 text-[var(--color-gold-primary)]" />
               </div>
               
               <h3 className="text-[18px] font-heading font-bold text-[#020E20] mb-4 leading-tight group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
