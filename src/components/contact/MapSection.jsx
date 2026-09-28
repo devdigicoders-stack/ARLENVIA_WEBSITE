@@ -63,7 +63,7 @@ const MapSection = () => {
           <h3 className="text-[14px] font-heading font-bold text-[#020E20] mb-4 uppercase tracking-widest">Arlenvia Training Consultancy Services – Philippines Office</h3>
           <p className="text-[#667085] mb-8 font-light text-[15px]">Avida Residences Sta. Monica, Brgy. Antipolo del Sur, Lipa City, Batangas, Philippines 4217</p>
           
-          <a href="https://maps.google.com/?q=Avida+Residences+Sta.+Monica,+Lipa+City,+Batangas,+Philippines" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-[12px] font-heading font-bold uppercase tracking-widest text-[#020E20] hover:text-[var(--color-gold-primary)] transition-colors group/btn w-fit mx-auto">
+          <a href="https://maps.google.com/?cid=13193474385573933119&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-[12px] font-heading font-bold uppercase tracking-widest text-[#020E20] hover:text-[var(--color-gold-primary)] transition-colors group/btn w-fit mx-auto">
             View on Google Maps
             <span className="w-8 h-px bg-[#020E20] group-hover/btn:bg-[var(--color-gold-primary)] group-hover/btn:w-12 transition-all duration-300" />
           </a>

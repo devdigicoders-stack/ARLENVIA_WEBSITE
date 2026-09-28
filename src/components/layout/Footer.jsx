@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
             </ul>
             <div className="mt-8 flex justify-center md:justify-start">
-              <a href="https://www.google.com/maps/place/Avida+Residences+Sta.+Monica,+Lipa,+Batangas,+Philippines" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[12px] font-heading font-bold uppercase tracking-widest text-[var(--color-gold-primary)] group">
+              <a href="https://maps.google.com/?cid=13193474385573933119&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[12px] font-heading font-bold uppercase tracking-widest text-[var(--color-gold-primary)] group">
                 <span className="border-b border-transparent group-hover:border-[var(--color-gold-primary)] transition-colors pb-0.5">View on Google Maps</span>
               </a>
             </div>
