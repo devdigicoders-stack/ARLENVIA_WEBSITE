@@ -54,17 +54,14 @@ const ServicesSection = () => {
             >
               <Link 
                 to={service.link}
-                className="block h-full bg-white border border-[#E5E7EB] p-10 shadow-sm hover:shadow-xl hover:border-transparent transition-all duration-500 group relative overflow-hidden hover:-translate-y-2"
+                className="block h-full bg-white border border-[#E5E7EB] p-10 shadow-sm hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
               >
-                {/* Gold Top Border Reveal */}
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
-                
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="text-[40px] text-[#020E20]/20 mb-8 transition-colors duration-500 group-hover:text-[var(--color-gold-primary)]/80">
+                  <div className="text-[40px] text-[var(--color-gold-primary)] mb-8 transition-transform duration-300 group-hover:scale-110 origin-left">
                     {service.icon}
                   </div>
                   
-                  <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-4 pr-4 leading-[1.3] transition-colors group-hover:text-[var(--color-primary-corporate)]">
+                  <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-4 pr-4 leading-[1.3]">
                     {service.title}
                   </h3>
                   
@@ -72,7 +69,7 @@ const ServicesSection = () => {
                     {service.summary}
                   </p>
                   
-                  <div className="flex items-center text-[#020E20] group-hover:text-[var(--color-gold-primary)] font-heading font-bold text-[11px] uppercase tracking-[0.15em] transition-colors mt-auto border-t border-gray-100 pt-6">
+                  <div className="flex items-center text-[var(--color-gold-primary)] font-heading font-bold text-[11px] uppercase tracking-[0.15em] mt-auto border-t border-gray-100 pt-6">
                     <span>Explore</span>
                     <FiArrowRight className="ml-3 transform transition-transform duration-300 group-hover:translate-x-2" />
                   </div>

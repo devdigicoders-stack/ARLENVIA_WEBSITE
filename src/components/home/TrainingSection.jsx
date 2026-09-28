@@ -16,7 +16,7 @@ const TrainingSection = () => {
       <div className="container mx-auto px-6 grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center">
         {/* Left Side: Visual */}
         <motion.div
-          className="relative aspect-square lg:aspect-[4/5] overflow-hidden"
+          className="relative aspect-video lg:aspect-[4/3] w-full overflow-hidden border border-[#E5E7EB] shadow-md"
           initial={{ opacity: 0, clipPath: 'inset(10% 10% 10% 10%)' }}
           whileInView={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
           viewport={{ once: true, margin: "-100px" }}

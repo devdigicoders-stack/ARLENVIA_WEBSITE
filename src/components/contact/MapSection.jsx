@@ -47,13 +47,13 @@ const MapSection = () => {
 
           {/* Real Google Maps Embed */}
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d15486.20457497258!2d121.1643916!3d13.9317929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6c62c97486e9%3A0xc3f7a3f85dfbd33!2sAvida%20Residences%20Sta.%20Monica!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2778.38303283405!2d121.18495007509348!3d13.923320986486656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6b4c87e12a93%3A0xb718a30d3959703f!2sAvida%20Residences%20Sta.%20Monica!5e1!3m2!1sen!2sin!4v1790603263514!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
             allowFullScreen="" 
             loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="strict-origin-when-cross-origin"
             title="Arlenvia Office Location"
             className="w-full h-full grayscale-[50%] group-hover:grayscale-[0%] transition-all duration-1000"
           ></iframe>

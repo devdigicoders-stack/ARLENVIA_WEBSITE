@@ -20,7 +20,7 @@ const DigitalAI = () => {
   return (
     <>
       <Helmet>
-        <title>Digital Innovation, Data & AI | Arlenvia</title>
+        <title>Digital Innovation, Data & AI | Arlenvia | Management Systems & Performance Consultancy</title>
         <meta name="description" content="Helping organizations use digital tools, data analytics and AI to improve visibility, monitoring, decision-making and management-system performance." />
       </Helmet>
 
@@ -44,14 +44,7 @@ const DigitalAI = () => {
         <DigitalApproach />
         <WhyArlenviaDigital />
         
-        <CTASection 
-          title="Ready to Use Data and Digital Tools More Effectively?"
-          subtitle="Explore practical digital, analytics and AI approaches aligned with your management-system and business objectives."
-          primaryBtnText="Discuss Your Requirements"
-          primaryBtnLink="/contact"
-          secondaryBtnText="Contact Arlenvia"
-          secondaryBtnLink="/contact"
-        />
+        <CTASection />
       </div>
     </>
   );

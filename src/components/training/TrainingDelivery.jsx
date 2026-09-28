@@ -48,7 +48,7 @@ const TrainingDelivery = () => {
           {modes.map((mode, index) => (
             <motion.div
               key={index}
-              className="bg-white p-10 lg:p-12 relative overflow-hidden shadow-xl border border-[var(--color-gold-primary)]/50 flex flex-col"
+              className="bg-white p-10 lg:p-12 relative overflow-hidden shadow-xl flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -4,12 +4,11 @@ import { FiPlus } from 'react-icons/fi';
 
 const WhyArlenvia = () => {
   const reasons = [
-    { title: "Professional Quality Expertise", content: "We bring deep domain knowledge in quality management and standards." },
-    { title: "Management-System Knowledge", content: "Extensive experience in designing and integrating complex management systems." },
-    { title: "Auditing Experience", content: "Expert insight from years of first, second, and third-party auditing." },
-    { title: "Business Understanding", content: "We align compliance requirements directly with your operational goals." },
-    { title: "Practical Implementation", content: "Solutions that are actually usable in your day-to-day operations." },
-    { title: "Performance-Focused Solutions", content: "Everything we do is geared toward measurable improvement." }
+    { title: "Practical", content: "We translate management-system requirements into processes that work in the real operating environment." },
+    { title: "Performance-Focused", content: "We connect compliance requirements with measurable organizational objectives and results." },
+    { title: "Evidence-Based", content: "We emphasize objective evidence, meaningful data and effective performance monitoring." },
+    { title: "People-Centered", content: "We recognize that sustainable improvement depends on competent and engaged people." },
+    { title: "Future-Ready", content: "We explore digital tools and AI-enabled approaches to make management systems smarter, more accessible and more effective." }
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);

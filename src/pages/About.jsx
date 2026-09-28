@@ -20,7 +20,7 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Arlenvia Training Consultancy Services</title>
+        <title>About Us | Arlenvia | Management Systems & Performance Consultancy</title>
         <meta name="description" content="Arlenvia helps organizations connect compliance, capability, and business performance through practical training and consultancy." />
       </Helmet>
 
@@ -44,13 +44,7 @@ const About = () => {
         <CommitmentSection />
         <BrandPromise />
         
-        <CTASection 
-          title="Build Stronger Systems. Develop Better Capability. Achieve Better Results."
-          primaryBtnText="Talk to Our Consultants"
-          primaryBtnLink="/contact"
-          secondaryBtnText="Explore Our Services"
-          secondaryBtnLink="/consultancy"
-        />
+        <CTASection />
       </div>
     </>
   );

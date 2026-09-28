@@ -51,11 +51,11 @@ const DigitalOverview = () => {
             </div>
             
             <h2 className="text-4xl lg:text-[3.2rem] font-heading font-semibold text-[#020E20] mb-8 leading-[1.1] tracking-tight">
-              Turning Management Data Into <span className="italic font-light text-[var(--color-gold-primary)]">Better Decisions</span>
+              Digital & AI for <span className="italic font-light text-[var(--color-gold-primary)]">Smarter Management Systems</span>
             </h2>
             
             <p className="text-[#667085] text-[17px] leading-[1.8] font-light mb-12 border-l border-[var(--color-gold-primary)]/30 pl-6">
-              Arlenvia supports organizations in exploring and utilizing practical digital technologies. Our goal is to improve visibility, streamline analysis, enhance monitoring, and provide robust decision support, seamlessly integrating with your management systems.
+              We explore practical applications of digital technologies and AI to make management systems more accessible, data-driven and effective.
             </p>
 
             <div className="grid grid-cols-2 gap-4">

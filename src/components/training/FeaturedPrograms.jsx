@@ -72,15 +72,12 @@ const FeaturedPrograms = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-6 px-6 lg:mx-0 lg:px-0"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {programs.map((prog, index) => (
-            <div key={index} className="min-w-[85vw] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[400px] flex-shrink-0 snap-start h-auto flex flex-col">
-              <div className="bg-white border border-[#E5E7EB] p-10 flex-grow flex flex-col group hover:border-[var(--color-gold-primary)]/50 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
-                {/* Accent Line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                
-                <h3 className="text-[22px] font-heading font-bold text-[#020E20] mb-6 leading-snug group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
+            <div key={index} className="h-full flex flex-col">
+              <div className="bg-white p-10 flex-grow flex flex-col group shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                <h3 className="text-[22px] font-heading font-bold text-[var(--color-gold-primary)] mb-6 leading-snug">
                   {prog.title}
                 </h3>
                 
@@ -97,7 +94,7 @@ const FeaturedPrograms = () => {
                   {prog.desc}
                 </p>
                 
-                <Link to="/contact" className="text-[#020E20] font-heading font-bold text-[13px] uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 group-hover:text-[var(--color-gold-primary)] transition-all mt-auto w-fit">
+                <Link to="/contact" className="text-[#020E20] font-heading font-bold text-[13px] uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all mt-auto w-fit">
                   Request Details <span className="text-[16px] leading-none pb-0.5">→</span>
                 </Link>
               </div>

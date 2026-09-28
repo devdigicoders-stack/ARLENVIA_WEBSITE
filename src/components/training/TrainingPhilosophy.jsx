@@ -37,7 +37,7 @@ const TrainingPhilosophy = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] font-heading text-[#020E20] font-light leading-[1.3] tracking-tight">
-            Training should not stop at knowledge. It should build <span className="font-semibold text-[var(--color-gold-primary)] italic">confidence</span>, <span className="font-semibold text-[var(--color-gold-primary)] italic">competence</span> and <span className="font-semibold text-[var(--color-gold-primary)] italic">practical application</span>.
+            Our training focuses not only on <span className="font-semibold text-[var(--color-gold-primary)] italic">understanding</span> the standard, but on <span className="font-semibold text-[var(--color-gold-primary)] italic">applying</span> its principles effectively within the organization.
           </h2>
         </motion.div>
       </div>

@@ -51,7 +51,7 @@ const IndustriesSection = () => {
               <span className="w-8 h-px bg-[var(--color-gold-primary)]" />
             </div>
             <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-tight tracking-tight">
-              Industries We Support
+              Creating Capability Across Sectors
             </h2>
           </motion.div>
         </div>

@@ -36,22 +36,20 @@ const WhyContactArlenvia = () => {
           </motion.div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className="bg-[#020E20] p-10 text-center hover:bg-white/5 transition-colors duration-500 group relative overflow-hidden flex flex-col"
+              className="bg-white/5 p-10 text-center hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 group flex flex-col cursor-default"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
-              
-              <h3 className="font-heading font-bold text-[14px] uppercase tracking-widest text-white group-hover:text-[var(--color-gold-primary)] transition-colors duration-300 mb-4">
+              <h3 className="font-heading font-bold text-[14px] uppercase tracking-widest text-[var(--color-gold-primary)] mb-4 leading-relaxed">
                 {card.title}
               </h3>
-              <p className="text-white/50 text-[13px] font-light leading-relaxed mt-auto">
+              <p className="text-white/70 text-[13px] font-light leading-relaxed mt-auto">
                 {card.desc}
               </p>
             </motion.div>

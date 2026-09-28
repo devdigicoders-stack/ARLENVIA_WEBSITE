@@ -24,7 +24,7 @@ const IndustriesSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-[#020E20] leading-[1.1] tracking-tight">
-              Industries We Support
+              Creating Capability Across Sectors
             </h2>
           </motion.div>
         </div>

@@ -19,7 +19,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[var(--color-primary-navy)] pt-20">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[var(--color-primary-navy)] pt-24 pb-16 lg:py-24">
       {/* Background with abstract shapes/glows */}
       <div className="absolute inset-0 z-0 bg-[#020E20]">
         <div className="absolute top-0 right-0 w-[50%] h-[100%] bg-gradient-to-l from-[#073866]/40 to-transparent mix-blend-screen pointer-events-none" />
@@ -38,44 +38,57 @@ const HeroSection = () => {
           >
             <span className="inline-flex items-center gap-3 py-1.5 px-4 text-[11px] font-heading font-bold tracking-[0.2em] text-[var(--color-gold-primary)] mb-8 uppercase">
               <span className="w-6 h-[1px] bg-[var(--color-gold-primary)]"></span>
-              Arlenvia Training Consultancy Services
+              Guided Excellence and Achievement
             </span>
           </motion.div>
 
           <motion.h1 
-            className="text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] font-heading font-semibold mb-8 text-white tracking-tight"
+            className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-heading font-semibold mb-6 text-white tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            Striking the <span className="text-white">Balance</span> Between <br className="hidden lg:block"/>
-            <span className="text-[var(--color-gold-light)] font-light italic">Compliance</span> and <br className="hidden lg:block"/> Business Performance
+            Transforming <span className="text-[var(--color-gold-light)] font-light italic">Quality, Compliance</span> and Capability into Business Performance
           </motion.h1>
 
           <motion.p 
-            className="text-lg md:text-xl text-white/70 mb-12 max-w-lg leading-relaxed font-light"
+            className="text-lg md:text-xl text-white/70 mb-4 max-w-xl leading-relaxed font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Arlenvia helps organizations strengthen management systems, improve operational performance, develop capable people, and embrace digital and AI-enabled improvement.
+          </motion.p>
+          
+          <motion.p 
+            className="text-[12px] font-heading font-bold text-[var(--color-gold-primary)] uppercase tracking-[0.15em] mb-12 max-w-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
             Practical Quality. Measurable Performance. Sustainable Improvement.
           </motion.p>
 
           <motion.div 
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row flex-wrap xl:flex-nowrap gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Link to="/consultancy" className="group">
-              <button className="bg-[var(--color-gold-primary)] text-[#020E20] h-[52px] px-8 text-[13px] font-heading font-bold uppercase tracking-widest hover:bg-[var(--color-gold-light)] transition-colors flex items-center gap-3">
-                Explore Our Services
+              <button className="bg-[var(--color-gold-primary)] text-[#020E20] h-[52px] px-5 sm:px-6 text-[11px] font-heading font-bold uppercase tracking-widest hover:bg-[var(--color-gold-light)] transition-colors flex items-center gap-2 w-full sm:w-auto justify-center whitespace-nowrap">
+                Explore Consultancy
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </button>
             </Link>
-            <Link to="/contact">
-              <button className="bg-transparent border border-white/20 text-white h-[52px] px-8 text-[13px] font-heading font-bold uppercase tracking-widest hover:border-[var(--color-gold-primary)] hover:text-[var(--color-gold-primary)] transition-colors">
-                Book a Consultation
+            <Link to="/training">
+              <button className="bg-transparent border border-white/20 text-white h-[52px] px-5 sm:px-6 text-[11px] font-heading font-bold uppercase tracking-widest hover:border-[var(--color-gold-primary)] hover:text-[var(--color-gold-primary)] transition-colors w-full sm:w-auto justify-center flex items-center whitespace-nowrap">
+                Explore Training
+              </button>
+            </Link>
+            <Link to="/digital-ai">
+              <button className="bg-transparent border border-white/20 text-white h-[52px] px-5 sm:px-6 text-[11px] font-heading font-bold uppercase tracking-widest hover:border-[var(--color-gold-primary)] hover:text-[var(--color-gold-primary)] transition-colors w-full sm:w-auto justify-center flex items-center whitespace-nowrap">
+                Digital & AI
               </button>
             </Link>
           </motion.div>

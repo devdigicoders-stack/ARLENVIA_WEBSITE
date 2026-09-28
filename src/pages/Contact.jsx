@@ -14,7 +14,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Arlenvia Training Consultancy Services</title>
+        <title>Contact Us | Arlenvia | Management Systems & Performance Consultancy</title>
         <meta name="description" content="Connect with Arlenvia to discuss management systems, professional training, audit support, business improvement, digital innovation or customized organizational requirements." />
       </Helmet>
 

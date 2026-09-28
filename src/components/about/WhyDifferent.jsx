@@ -43,13 +43,13 @@ const WhyDifferent = () => {
           {features.map((item, index) => (
             <motion.div
               key={index}
-              className="group border-t border-[#E5E7EB] pt-8 hover:border-[var(--color-gold-primary)] transition-colors duration-500"
+              className="group pt-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-[32px] font-heading font-light text-[#020E20]/20 mb-6 group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+              <div className="text-[32px] font-heading font-light text-[var(--color-gold-primary)] mb-6 transition-transform duration-300 group-hover:scale-110 origin-left">
                 {item.num}
               </div>
               <h3 className="text-xl font-heading font-bold text-[#020E20] mb-4">

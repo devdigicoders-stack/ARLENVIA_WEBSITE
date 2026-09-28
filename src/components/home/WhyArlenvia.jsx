@@ -5,33 +5,28 @@ const WhyArlenvia = () => {
   const reasons = [
     { 
       num: "01",
-      title: "Practical Expertise", 
-      desc: "Our consultants have deep, practical knowledge of quality management and industry standards, ensuring systems are built correctly from the ground up." 
+      title: "Practical", 
+      desc: "We translate management-system requirements into processes that work in the real operating environment." 
     },
     { 
       num: "02",
-      title: "Business-Focused Compliance", 
-      desc: "We align compliance requirements with your strategic business objectives, turning mandatory standards into competitive advantages." 
+      title: "Performance-Focused", 
+      desc: "We connect compliance requirements with measurable organizational objectives and results." 
     },
     { 
       num: "03",
-      title: "Evidence-Based Approach", 
-      desc: "Our advice and improvements are always grounded in factual analysis of your data and operational realities." 
+      title: "Evidence-Based", 
+      desc: "We emphasize objective evidence, meaningful data and effective performance monitoring." 
     },
     { 
       num: "04",
-      title: "Customized Solutions", 
-      desc: "We focus on solutions that actually work in your daily operations, avoiding unnecessary bureaucracy and 'paper-only' systems." 
+      title: "People-Centered", 
+      desc: "We recognize that sustainable improvement depends on competent and engaged people." 
     },
     { 
       num: "05",
-      title: "Capability Development", 
-      desc: "Our goal is not just to fix problems, but to build your team's internal capability to manage and improve systems independently." 
-    },
-    { 
-      num: "06",
-      title: "Sustainable Improvement", 
-      desc: "We partner with you to create capable systems that drive genuine, long-lasting business performance." 
+      title: "Future-Ready", 
+      desc: "We explore digital tools and AI-enabled approaches to make management systems smarter, more accessible and more effective." 
     }
   ];
 

@@ -40,14 +40,13 @@ const WhyArlenviaDigital = () => {
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className="bg-[#F7F6F2] p-10 relative overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-700 border border-[#E5E7EB] hover:border-[var(--color-gold-primary)]/50 flex flex-col"
+              className="bg-[#F7F6F2] p-10 relative overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-700 border border-[#E5E7EB] flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Decorative line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+              {/* Decorative line removed as per request */}
               
               <div className="w-12 h-12 bg-white shadow-sm flex items-center justify-center mb-6 group-hover:bg-[#020E20] transition-colors duration-500">
                 <card.icon className="w-5 h-5 text-[var(--color-gold-primary)]" />

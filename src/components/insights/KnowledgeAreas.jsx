@@ -35,12 +35,11 @@ const KnowledgeAreas = ({ setActiveFilter }) => {
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 max-w-5xl mx-auto border border-white/10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {areas.map((area, index) => (
             <motion.div
               key={index}
               onClick={() => {
-                // Map the knowledge area to the blog filter if they match closely
                 const mappedFilter = 
                   area === "Audit & Assessment" ? "Auditing" : 
                   area === "Quality & Performance" ? "Quality" : 
@@ -54,14 +53,13 @@ const KnowledgeAreas = ({ setActiveFilter }) => {
                    window.scrollTo({ top: 400, behavior: 'smooth' });
                 }
               }}
-              className="bg-[#020E20] p-10 text-center hover:bg-white/5 transition-colors duration-500 cursor-pointer group relative overflow-hidden flex items-center justify-center min-h-[160px]"
+              className="bg-white/5 p-10 text-center hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex items-center justify-center min-h-[160px]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
-              <h3 className="font-heading font-bold text-[15px] uppercase tracking-widest text-white group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
+              <h3 className="font-heading font-bold text-[15px] uppercase tracking-widest text-[var(--color-gold-primary)] leading-relaxed">
                 {area}
               </h3>
             </motion.div>

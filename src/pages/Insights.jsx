@@ -120,14 +120,14 @@ const Insights = () => {
   return (
     <>
       <Helmet>
-        <title>Insights & Resources | Arlenvia</title>
+        <title>Insights & Perspectives | Arlenvia | Management Systems & Performance Consultancy</title>
         <meta name="description" content="Explore practical perspectives on quality, management systems, auditing, performance improvement, digital transformation and responsible AI." />
       </Helmet>
 
       <div className="flex flex-col w-full">
         <PageHero 
-          label="Insights & Resources"
-          title="Insights for Better Systems, Stronger Capability & Improved Performance"
+          label="Insights & Perspectives"
+          title="Management-System Knowledge, Tools and Best Practices"
           description="Explore practical perspectives on quality, management systems, auditing, performance improvement, digital transformation and responsible AI."
           breadcrumb="Insights"
           bgImages={[heroImage1, heroImage2, heroImage3]}
@@ -144,12 +144,7 @@ const Insights = () => {
         <KnowledgeAreas setActiveFilter={setActiveFilter} />
         <NewsletterSection />
         
-        <CTASection 
-          title="Need support applying these ideas within your organization?"
-          subtitle="Our experts are ready to discuss your specific challenges."
-          primaryBtnText="Talk to Arlenvia"
-          primaryBtnLink="/contact"
-        />
+        <CTASection />
       </div>
     </>
   );

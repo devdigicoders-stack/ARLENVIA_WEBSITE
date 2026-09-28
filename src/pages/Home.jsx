@@ -10,6 +10,7 @@ import ApproachSection from '../components/home/ApproachSection';
 import DigitalAISection from '../components/home/DigitalAISection';
 import IndustriesSection from '../components/home/IndustriesSection';
 import WhyArlenvia from '../components/home/WhyArlenvia';
+import BeyondCompliance from '../components/home/BeyondCompliance';
 import InsightsSection from '../components/home/InsightsSection';
 import FAQSection from '../components/home/FAQSection';
 import CTASection from '../components/common/CTASection';
@@ -18,16 +19,17 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Arlenvia | Striking the Balance Between Compliance and Business Performance</title>
-        <meta name="description" content="Arlenvia Training Consultancy Services. Practical Quality. Measurable Performance. Sustainable Improvement." />
+        <title>Arlenvia | Management Systems & Performance Consultancy</title>
+        <meta name="description" content="Arlenvia helps organizations connect management-system requirements with processes, people, objective evidence, performance measurement and business results." />
       </Helmet>
 
       <div className="flex flex-col w-full">
         <HeroSection />
+        <BeyondCompliance />
         <ExpertiseStrip />
         <AboutPreview />
         <ServicesSection />
-        <PhilosophySection />
+        {/* <PhilosophySection /> */}
         <TrainingSection />
         <ApproachSection />
         <DigitalAISection />
@@ -36,14 +38,7 @@ const Home = () => {
         <InsightsSection />
         <FAQSection />
         
-        <CTASection 
-          title="Ready to Turn Compliance Into Performance?"
-          subtitle="Let's discuss how Arlenvia can support your organization."
-          primaryBtnText="Book a Consultation"
-          primaryBtnLink="/contact"
-          secondaryBtnText="Contact Us"
-          secondaryBtnLink="/contact"
-        />
+        <CTASection />
       </div>
     </>
   );

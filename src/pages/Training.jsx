@@ -19,7 +19,7 @@ const Training = () => {
   return (
     <>
       <Helmet>
-        <title>Training & Professional Development | Arlenvia</title>
+        <title>Training & Professional Development | Arlenvia | Management Systems & Performance Consultancy</title>
         <meta name="description" content="Application-focused training designed to help professionals and organizations understand requirements, apply them effectively, and build lasting capability." />
       </Helmet>
 
@@ -42,14 +42,7 @@ const Training = () => {
         <TrainingBenefits />
         <TrainingDelivery />
         
-        <CTASection 
-          title="Need Training Tailored to Your Organization?"
-          subtitle="Tell us your objectives, competency gaps or management-system requirements, and we can discuss a suitable training solution."
-          primaryBtnText="Request Training"
-          primaryBtnLink="/contact"
-          secondaryBtnText="Contact Arlenvia"
-          secondaryBtnLink="/contact"
-        />
+        <CTASection />
       </div>
     </>
   );

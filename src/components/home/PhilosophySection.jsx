@@ -1,13 +1,28 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const PhilosophyStep = ({ label, index, isLast }) => (
+  <div className="flex flex-col items-start w-full">
+    <motion.div 
+      className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-5 w-full md:w-4/5 relative z-10 transition-all hover:bg-white/20 hover:border-[var(--color-gold-primary)] group"
+      initial={{ opacity: 0, x: 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <div className="flex items-center gap-6">
+        <span className="text-[var(--color-gold-primary)] font-heading font-light text-2xl opacity-60 group-hover:opacity-100 transition-opacity">0{index + 1}</span>
+        <span className="font-heading font-bold text-white text-[14px] tracking-widest uppercase">{label}</span>
+      </div>
+    </motion.div>
+    
+    {!isLast && (
+      <div className="h-16 w-[2px] bg-gradient-to-b from-[var(--color-gold-primary)] to-transparent ml-[42px] my-1 relative opacity-40" />
+    )}
+  </div>
+);
 
 const PhilosophySection = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"]
-  });
-
   const steps = [
     "Meet Requirements",
     "Control Risk",
@@ -17,105 +32,70 @@ const PhilosophySection = () => {
     "Improve Business Performance"
   ];
 
-  const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
   return (
-    <section ref={containerRef} className="py-32 bg-[#020E20] text-white overflow-hidden relative border-y border-white/5">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#073866]/30 via-[#020E20] to-[#020E20] opacity-80" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="mb-24 text-center max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="flex justify-center items-center gap-4 mb-8">
-            <span className="w-12 h-px bg-[var(--color-gold-primary)]" />
-            <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
-              Core Philosophy
-            </span>
-            <span className="w-12 h-px bg-[var(--color-gold-primary)]" />
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold leading-[1.1] tracking-tight">
-            <span className="block mb-4 text-white/90">Compliance + Capability + Performance</span>
-            <span className="block text-white font-light italic">
-              = Sustainable Improvement
-            </span>
-          </h2>
-        </motion.div>
+    <section className="relative bg-[#020E20] text-white">
+      {/* Background Gradients */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#073866]/30 via-[#020E20] to-[#020E20] opacity-80" />
+      </div>
 
-        {/* Process Flow - Desktop (Horizontal) */}
-        <div className="hidden lg:block relative max-w-6xl mx-auto mt-32 mb-20">
-          <div className="absolute top-[28px] left-[8.33%] w-[83.33%] h-[1px] bg-white/20" />
-          <motion.div 
-            className="absolute top-[28px] left-[8.33%] w-[83.33%] h-[1px] bg-[var(--color-gold-primary)] origin-left"
-            style={{ scaleX }}
-          />
+      <div className="container mx-auto px-6 max-w-7xl relative z-10 py-24 lg:py-32">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           
-          <div className="grid grid-cols-6 gap-4 relative">
-            {steps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center text-center relative group">
-                <motion.div 
-                  className="w-14 h-14 rounded-full bg-[#031C36] border border-white/20 flex items-center justify-center text-[var(--color-gold-light)] font-heading font-bold text-lg mb-8 relative z-10 group-hover:border-[var(--color-gold-primary)] group-hover:bg-[var(--color-gold-primary)] group-hover:text-[#020E20] transition-colors duration-500 shadow-[0_0_0_8px_#020E20]"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  {index + 1}
-                </motion.div>
-                <motion.span 
-                  className="text-[15px] font-heading font-semibold text-white/70 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300 max-w-[140px]"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                >
-                  {step}
-                </motion.span>
+          {/* Left Column - Sticky Text */}
+          <div className="w-full lg:w-1/2 lg:sticky lg:top-32 pt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="mb-6 flex items-center gap-4">
+                <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] tracking-[0.2em] uppercase">
+                  Core Philosophy
+                </span>
+                <div className="h-px w-12 bg-[var(--color-gold-primary)]/50" />
               </div>
-            ))}
-          </div>
-        </div>
+              
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold leading-[1.1] tracking-tight mb-8">
+                <span className="block mb-4 text-white/90">Compliance + Capability + Performance</span>
+                <span className="block font-serif italic font-normal text-[var(--color-gold-light)] opacity-90 tracking-wide mt-2 text-[0.95em]">
+                  = Sustainable Improvement
+                </span>
+              </h2>
+            </motion.div>
 
-        {/* Process Flow - Mobile (Vertical) */}
-        <div className="lg:hidden relative ml-4 mt-16 pb-4">
-          <div className="absolute top-[28px] bottom-[28px] left-[27px] w-[2px] bg-white/20" />
-          <motion.div 
-            className="absolute top-[28px] bottom-[28px] left-[27px] w-[2px] bg-[var(--color-gold-primary)] origin-top"
-            style={{ scaleY }}
-          />
-          
-          <div className="flex flex-col gap-12 relative">
-            {steps.map((step, index) => (
-              <div key={index} className="flex items-center gap-8 group">
-                <motion.div 
-                  className="w-14 h-14 rounded-full bg-[#031C36] border border-white/20 flex items-center justify-center text-[var(--color-gold-light)] font-heading font-bold text-lg relative z-10 shrink-0 group-hover:border-[var(--color-gold-primary)] group-hover:bg-[var(--color-gold-primary)] group-hover:text-[#020E20] transition-colors duration-500 shadow-[0_0_0_8px_#020E20]"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  {index + 1}
-                </motion.div>
-                <motion.span 
-                  className="text-lg font-heading font-semibold text-white/80 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                >
-                  {step}
-                </motion.span>
-              </div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-6 text-white/70 text-[17px] md:text-[19px] leading-relaxed font-light max-w-xl"
+            >
+              <p>
+                Our philosophy is simple: we believe that systems are only as good as the performance they deliver.
+              </p>
+              <p>
+                By shifting the focus from simply meeting requirements to actively managing risks and improving processes, organizations can unlock their true capability.
+              </p>
+            </motion.div>
           </div>
-        </div>
 
+          {/* Right Column - Scrolling Content */}
+          <div className="w-full lg:w-1/2 pt-10 lg:pt-0">
+            <div className="flex flex-col">
+              {steps.map((step, index) => (
+                <PhilosophyStep 
+                  key={index} 
+                  label={step} 
+                  index={index} 
+                  isLast={index === steps.length - 1} 
+                />
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

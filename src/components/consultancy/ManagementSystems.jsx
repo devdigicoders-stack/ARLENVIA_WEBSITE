@@ -8,6 +8,7 @@ const ManagementSystems = () => {
     { iso: "ISO 45001", name: "Occupational Health & Safety Management Systems" },
     { iso: "ISO 55001", name: "Asset Management Systems" },
     { iso: "ISO 29001", name: "Quality Management for Petroleum, Petrochemical & Natural Gas Industries" },
+    { iso: "ISO 29990", name: "Learning Services for Non-Formal Education and Training" },
     { iso: "ISO 19011", name: "Guidelines for Auditing Management Systems" },
     { iso: "ISO 9004", name: "Quality Management – Performance Improvement" }
   ];
@@ -55,8 +56,7 @@ const ManagementSystems = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              {/* Hover Accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              {/* Hover Accent removed as per request */}
               
               <h3 className="text-2xl font-heading font-bold text-[#020E20] mb-3 group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
                 {item.iso}

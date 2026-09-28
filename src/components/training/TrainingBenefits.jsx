@@ -39,14 +39,14 @@ const TrainingBenefits = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="bg-white/5 p-10 border border-white/10 hover:border-[var(--color-gold-primary)]/50 hover:bg-white/10 hover:-translate-y-1 transition-all duration-500 group flex flex-col justify-between h-[240px] cursor-default relative overflow-hidden"
+              className="bg-white/10 p-10 hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between h-[240px] cursor-default relative overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Huge Background Number */}
-              <div className="absolute -right-4 -bottom-6 text-[120px] font-heading font-bold text-white/5 group-hover:text-[var(--color-gold-primary)]/10 transition-colors duration-500 leading-none z-0">
+              <div className="absolute -right-4 -bottom-6 text-[120px] font-heading font-bold text-[var(--color-gold-primary)]/10 leading-none z-0 transition-transform duration-300 group-hover:scale-110">
                 {benefit.num}
               </div>
               
@@ -55,7 +55,7 @@ const TrainingBenefits = () => {
                   Outcome {benefit.num}
                 </span>
                 
-                <h3 className="text-[22px] font-heading font-semibold text-white leading-snug group-hover:text-[var(--color-gold-primary)] transition-colors duration-500 max-w-[220px]">
+                <h3 className="text-[22px] font-heading font-semibold text-[var(--color-gold-primary)] leading-snug max-w-[220px]">
                   {benefit.title}
                 </h3>
               </div>

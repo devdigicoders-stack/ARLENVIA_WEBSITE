@@ -38,13 +38,13 @@ const CommitmentSection = () => {
           {commitments.map((word, index) => (
             <motion.div
               key={index}
-              className="bg-[#020E20] py-12 px-6 flex items-center justify-center group hover:bg-[var(--color-gold-primary)] transition-colors duration-500 cursor-default"
+              className="bg-[var(--color-gold-primary)] py-12 px-6 flex items-center justify-center cursor-default hover:-translate-y-1 transition-transform duration-300"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <h3 className="text-[17px] font-heading font-bold text-white group-hover:text-[#020E20] transition-colors duration-500 uppercase tracking-widest text-center">
+              <h3 className="text-[17px] font-heading font-bold text-[#020E20] uppercase tracking-widest text-center">
                 {word}
               </h3>
             </motion.div>

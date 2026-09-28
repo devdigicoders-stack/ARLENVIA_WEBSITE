@@ -10,7 +10,7 @@ const AboutPreview = () => {
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Visual */}
         <motion.div
-          className="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden"
+          className="relative aspect-video lg:aspect-[4/3] w-full overflow-hidden border border-[#E5E7EB] shadow-md"
           initial={{ opacity: 0, clipPath: 'inset(10% 10% 10% 10%)' }}
           whileInView={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
           viewport={{ once: true, margin: "-100px" }}

@@ -1,9 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logoImage from '../../assets/logo/logo.png';
 
 const VisionMission = () => {
   return (
-    <section className="py-24 lg:py-32 bg-[#020E20] relative overflow-hidden">
+    <section className="py-24 lg:py-32 relative overflow-hidden bg-[#020E20]">
+      {/* Logo Watermark */}
+      <div 
+        className="absolute inset-0 z-0 bg-center bg-no-repeat opacity-[0.03]"
+        style={{ backgroundImage: `url(${logoImage})`, backgroundSize: '70%' }}
+      />
       {/* Background Accent */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#073866] via-transparent to-transparent opacity-80" />
@@ -55,16 +61,29 @@ const VisionMission = () => {
           
           <ul className="space-y-6">
             {[
-              "Strengthen management systems with practical design",
-              "Improve operational performance systematically",
-              "Develop highly competent, capable people",
-              "Identify critical risks & hidden opportunities",
-              "Leverage data for evidence-based decisions",
-              "Achieve long-term sustainable performance"
+              {
+                title: "Strengthen Management Systems",
+                desc: "Design and improve practical management systems that support organizational objectives."
+              },
+              {
+                title: "Improve Operational Performance",
+                desc: "Translate processes, risks and requirements into measurable performance improvement."
+              },
+              {
+                title: "Develop Capable People",
+                desc: "Build the knowledge, competence and confidence needed to sustain organizational performance."
+              },
+              {
+                title: "Identify Risks & Opportunities",
+                desc: "Help organizations recognize critical risks, hidden opportunities and areas for improvement."
+              }
             ].map((item, idx) => (
               <li key={idx} className="flex items-start gap-4">
                 <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-gold-primary)] mt-2.5 shrink-0" />
-                <span className="text-white/90 font-light text-[17px] leading-relaxed">{item}</span>
+                <div>
+                  <span className="text-[var(--color-gold-light)] font-semibold text-[17px] block mb-1">{item.title}</span>
+                  <span className="text-white/90 font-light text-[15px] leading-relaxed block">{item.desc}</span>
+                </div>
               </li>
             ))}
           </ul>

@@ -48,36 +48,34 @@ const DashboardSection = () => {
           <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-gold-primary)]/10 rounded-full blur-[80px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
           {/* Header Mockup */}
-          <div className="flex justify-between items-center mb-10 border-b border-white/10 pb-6 relative z-10">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-white/10 flex items-center justify-center">
-                <div className="w-4 h-4 bg-[var(--color-gold-primary)]" />
+          <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-10 border-b border-white/10 pb-6 relative z-10">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 bg-white/10 flex items-center justify-center">
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[var(--color-gold-primary)]" />
               </div>
-              <span className="font-heading font-bold text-xl tracking-wide text-white">Performance Overview</span>
+              <span className="font-heading font-bold text-lg sm:text-xl tracking-wide text-white">Performance Overview</span>
             </div>
-            <div className="flex gap-3">
-              <div className="w-20 h-10 bg-white/5" />
-              <div className="w-10 h-10 bg-white/10" />
+            <div className="flex gap-2 sm:gap-3 w-full sm:w-auto justify-start sm:justify-end">
+              <div className="w-16 sm:w-20 h-8 sm:h-10 bg-white/5" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10" />
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 relative z-10">
             {blocks.map((block, index) => (
               <motion.div
                 key={index}
-                className="bg-[#020E20] border border-white/5 p-8 hover:border-[var(--color-gold-primary)]/30 transition-all cursor-default group relative overflow-hidden"
+                className="bg-[#020E20] border border-[var(--color-gold-primary)]/30 p-6 sm:p-8 hover:-translate-y-1 transition-all cursor-default group relative overflow-hidden"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--color-gold-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                
-                <h3 className="text-white/40 font-heading font-bold text-[11px] uppercase tracking-widest mb-4 group-hover:text-white/60 transition-colors">{block.title}</h3>
-                <div className="text-3xl lg:text-4xl font-heading font-light text-white mb-4 group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+                <h3 className="text-[var(--color-gold-primary)] font-heading font-bold text-[11px] uppercase tracking-widest mb-3 sm:mb-4">{block.title}</h3>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-heading font-light text-white mb-3 sm:mb-4">
                   {block.value}
                 </div>
-                <div className={`text-[13px] font-bold tracking-wide uppercase ${block.color}`}>
+                <div className={`text-[12px] sm:text-[13px] font-bold tracking-wide uppercase ${block.color}`}>
                   {block.trend}
                 </div>
               </motion.div>

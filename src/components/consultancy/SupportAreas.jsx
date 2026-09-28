@@ -3,14 +3,16 @@ import { motion } from 'framer-motion';
 
 const SupportAreas = () => {
   const areas = [
-    { num: "01", title: "Gap Assessment & Readiness Reviews" },
-    { num: "02", title: "Internal Audit Program Development" },
-    { num: "03", title: "Management Review & Performance Evaluation" },
-    { num: "04", title: "Corrective Action & Continual Improvement" },
-    { num: "05", title: "Risk & Opportunity Management" },
-    { num: "06", title: "Process Mapping & Improvement" },
-    { num: "07", title: "Documentation & Implementation Support" },
-    { num: "08", title: "Supplier Quality & Compliance Audits" }
+    { num: "01", title: "Management System Development & Improvement" },
+    { num: "02", title: "ISO Implementation & Integration" },
+    { num: "03", title: "Process Design & Optimization" },
+    { num: "04", title: "Risk & Opportunity Management" },
+    { num: "05", title: "Internal Audit & Audit Readiness" },
+    { num: "06", title: "Management Review & Performance Monitoring" },
+    { num: "07", title: "KPI & Objective Development" },
+    { num: "08", title: "Objective Evidence & Compliance Monitoring" },
+    { num: "09", title: "Continual Improvement" },
+    { num: "10", title: "Integrated Management Systems" }
   ];
 
   return (
@@ -36,11 +38,11 @@ const SupportAreas = () => {
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 p-px rounded-sm">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-px bg-white/10 p-px rounded-sm">
           {areas.map((area, index) => (
             <motion.div
               key={index}
-              className="bg-[#020E20] p-8 lg:p-10 relative overflow-hidden group hover:bg-white/5 transition-colors duration-500"
+              className="bg-white/5 p-8 lg:p-10 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -50,7 +52,7 @@ const SupportAreas = () => {
                 <span className="text-[var(--color-gold-primary)] font-heading font-bold text-[13px] tracking-widest block">
                   {area.num}
                 </span>
-                <h3 className="text-[19px] font-heading font-bold text-white leading-tight group-hover:text-[var(--color-gold-primary)] transition-colors duration-500">
+                <h3 className="text-[19px] font-heading font-bold text-[var(--color-gold-primary)] leading-tight">
                   {area.title}
                 </h3>
               </div>

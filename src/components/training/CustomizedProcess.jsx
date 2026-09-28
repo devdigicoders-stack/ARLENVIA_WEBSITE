@@ -73,13 +73,13 @@ const CustomizedProcess = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Node */}
-                <div className="w-[80px] h-[80px] shrink-0 rounded-full bg-[#020E20] border border-white/10 group-hover:border-[var(--color-gold-primary)] flex items-center justify-center text-xl font-heading font-light text-white/30 group-hover:text-[var(--color-gold-primary)] transition-all duration-500 shadow-sm lg:mb-8 relative z-10">
+                <div className="w-[80px] h-[80px] shrink-0 rounded-full bg-[#020E20] border border-[var(--color-gold-primary)] flex items-center justify-center text-xl font-heading font-light text-[var(--color-gold-primary)] transition-transform duration-300 group-hover:scale-110 shadow-sm lg:mb-8 relative z-10">
                   {item.num}
                   {/* Subtle pulse ring on hover */}
                   <div className="absolute inset-0 rounded-full border border-[var(--color-gold-primary)] scale-100 group-hover:scale-125 opacity-0 group-hover:opacity-20 transition-all duration-700" />
                 </div>
                 
-                <h3 className="text-[15px] font-heading font-bold text-white uppercase tracking-widest group-hover:text-[var(--color-gold-primary)] transition-colors duration-300">
+                <h3 className="text-[15px] font-heading font-bold text-[var(--color-gold-primary)] uppercase tracking-widest">
                   {item.title}
                 </h3>
               </motion.div>

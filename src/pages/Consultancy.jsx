@@ -19,7 +19,7 @@ const Consultancy = () => {
   return (
     <>
       <Helmet>
-        <title>Consultancy Services | Arlenvia Training Consultancy Services</title>
+        <title>Consultancy Services | Arlenvia | Management Systems & Performance Consultancy</title>
         <meta name="description" content="Practical consultancy solutions designed to strengthen management systems, improve processes, manage risk, and support sustainable organizational performance." />
       </Helmet>
 
@@ -42,14 +42,7 @@ const Consultancy = () => {
         <WhyArlenviaConsultancy />
         <IndustriesSection />
         
-        <CTASection 
-          title="Need Support With Your Management System or Business Performance?"
-          subtitle="Tell us your current challenge and our team can discuss the most suitable consultancy approach."
-          primaryBtnText="Request Consultancy"
-          primaryBtnLink="/contact"
-          secondaryBtnText="Contact Arlenvia"
-          secondaryBtnLink="/contact"
-        />
+        <CTASection />
       </div>
     </>
   );

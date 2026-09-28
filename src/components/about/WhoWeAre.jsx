@@ -50,7 +50,7 @@ const WhoWeAre = () => {
 
           {/* Right Side: Image Reveal */}
           <motion.div 
-            className="relative aspect-square lg:aspect-[4/5] overflow-hidden order-1 lg:order-2"
+            className="relative aspect-video lg:aspect-[4/3] w-full overflow-hidden order-1 lg:order-2 border border-[#E5E7EB] shadow-md"
             initial={{ opacity: 0, clipPath: 'inset(10% 10% 10% 10%)' }}
             whileInView={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
             viewport={{ once: true, margin: "-100px" }}

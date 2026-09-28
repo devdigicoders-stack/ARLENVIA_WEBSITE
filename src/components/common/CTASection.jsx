@@ -31,20 +31,18 @@ const CTASection = ({ title, subtitle, primaryBtnText, primaryBtnLink, secondary
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {title}
+          {title || "Have a Quality, Compliance or Performance Challenge?"}
         </motion.h2>
 
-        {subtitle && (
-          <motion.p 
-            className="text-xl text-white/70 mb-12 font-light max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {subtitle}
-          </motion.p>
-        )}
+        <motion.p 
+          className="text-xl text-white/70 mb-12 font-light max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {subtitle || "Let's discuss how we can help you build capability and improve results."}
+        </motion.p>
 
         <motion.div 
           className="flex flex-col sm:flex-row justify-center gap-4"
@@ -55,15 +53,17 @@ const CTASection = ({ title, subtitle, primaryBtnText, primaryBtnLink, secondary
         >
           <Link to={primaryBtnLink || '/contact'} className="group">
             <button className="w-full sm:w-auto bg-[var(--color-gold-primary)] text-[#020E20] h-[52px] px-8 text-[13px] font-heading font-bold uppercase tracking-widest hover:bg-[var(--color-gold-light)] transition-colors flex items-center justify-center gap-3">
-              {primaryBtnText || 'Talk to Our Consultants'}
+              {primaryBtnText || 'Contact Us'}
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </Link>
-          <Link to={secondaryBtnLink || '/consultancy'}>
-            <button className="w-full sm:w-auto bg-transparent border border-white/20 text-white h-[52px] px-8 text-[13px] font-heading font-bold uppercase tracking-widest hover:border-[var(--color-gold-primary)] hover:text-[var(--color-gold-primary)] transition-colors">
-              {secondaryBtnText || 'Explore Our Services'}
-            </button>
-          </Link>
+          {secondaryBtnText && (
+            <Link to={secondaryBtnLink || '/consultancy'}>
+              <button className="w-full sm:w-auto bg-transparent border border-white/20 text-white h-[52px] px-8 text-[13px] font-heading font-bold uppercase tracking-widest hover:border-[var(--color-gold-primary)] hover:text-[var(--color-gold-primary)] transition-colors">
+                {secondaryBtnText}
+              </button>
+            </Link>
+          )}
         </motion.div>
       </div>
     </section>
