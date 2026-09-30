@@ -27,7 +27,6 @@ const ContactCards = () => {
             
             <div className="text-[#667085] mb-8 flex flex-col gap-2 font-light text-[15px]">
               <a href="mailto:info@arlenvia.com" className="hover:text-[var(--color-gold-primary)] transition-colors">info@arlenvia.com</a>
-              <a href="mailto:arlene@arlenvia.com" className="hover:text-[var(--color-gold-primary)] transition-colors">arlene@arlenvia.com</a>
             </div>
             
             <a href="mailto:info@arlenvia.com" className="mt-auto inline-flex items-center gap-2 text-[12px] font-heading font-bold text-[#020E20] uppercase tracking-widest hover:text-[var(--color-gold-primary)] transition-colors">
@@ -84,8 +83,8 @@ const ContactCards = () => {
             
             <div className="text-white/70 mb-8 text-[14px] leading-[1.8] font-light h-[72px] flex flex-col justify-center items-center relative z-10">
               <span className="font-semibold text-[var(--color-gold-primary)] uppercase tracking-widest text-[11px] mb-2">Philippines Office</span>
-              Avida Residences Sta. Monica<br/>
-              Lipa City, Batangas
+              Hacienda Sta. Monica<br/>
+              Lipa City, Batangas, Philippines
             </div>
             
             <a href="#map" className="mt-auto inline-flex items-center gap-2 text-[12px] font-heading font-bold text-[var(--color-gold-primary)] uppercase tracking-widest hover:text-white transition-colors relative z-10">

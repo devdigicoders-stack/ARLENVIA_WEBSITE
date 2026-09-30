@@ -20,6 +20,9 @@ const Footer = () => {
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Turning compliance into performance. We deliver practical management systems, auditing, and customized training solutions for sustainable business improvement.
             </p>
+            <p className="text-[var(--color-gold-primary)] text-[13px] leading-relaxed border-l-2 border-[var(--color-gold-primary)] pl-4 py-1">
+              <strong>Training & Consultancy Delivery:</strong> Primarily conducted virtually. On-site and face-to-face engagements are available by arrangement.
+            </p>
           </div>
 
           {/* Column 2 */}
@@ -57,16 +60,14 @@ const Footer = () => {
                 <FaEnvelope className="text-[var(--color-gold-primary)] md:mt-1 shrink-0" />
                 <div className="text-center md:text-left flex flex-col gap-1">
                   <a href="mailto:info@arlenvia.com" className="hover:text-[var(--color-gold-primary)] transition-colors">info@arlenvia.com</a>
-                  <a href="mailto:arlene@arlenvia.com" className="hover:text-[var(--color-gold-primary)] transition-colors">arlene@arlenvia.com</a>
                 </div>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-3">
                 <FaMapMarkerAlt className="text-[var(--color-gold-primary)] md:mt-1 shrink-0" />
                 <p className="text-center md:text-left leading-relaxed">
-                  Avida Residences Sta. Monica,<br/>
-                  Brgy. Antipolo del Sur,<br/>
+                  Hacienda Sta. Monica,<br/>
                   Lipa City, Batangas,<br/>
-                  Philippines 4217
+                  Philippines
                 </p>
               </li>
             </ul>
@@ -78,9 +79,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center md:flex md:justify-between items-center text-white/40 text-sm font-light">
-          <p>© {new Date().getFullYear()} Arlenvia Training Consultancy Services. All Rights Reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-6">
+        <div className="pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center text-white/40 text-sm font-light gap-6">
+          <p className="text-center lg:text-left">© {new Date().getFullYear()} Arlenvia Training Consultancy Services. All Rights Reserved.</p>
+          
+          <div className="text-center text-[13px] text-white/60">
+            Designed and Developed by <a href="https://www.worknestconnect.com/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-gold-primary)] hover:text-white transition-colors font-medium">Worknest Connect</a>
+          </div>
+
+          <div className="flex gap-6">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>

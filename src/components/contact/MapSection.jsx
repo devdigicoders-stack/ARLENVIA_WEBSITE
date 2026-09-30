@@ -27,7 +27,7 @@ const MapSection = () => {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-[var(--color-gold-primary)]">
                 <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
               </svg>
-              Avida Residences Sta. Monica, Lipa City, Batangas, Philippines
+              Hacienda Sta. Monica, Lipa City, Batangas, Philippines
             </div>
           </motion.div>
         </div>
@@ -47,7 +47,7 @@ const MapSection = () => {
 
           {/* Real Google Maps Embed */}
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2778.38303283405!2d121.18495007509348!3d13.923320986486656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6b4c87e12a93%3A0xb718a30d3959703f!2sAvida%20Residences%20Sta.%20Monica!5e1!3m2!1sen!2sin!4v1790603263514!5m2!1sen!2sin" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1035.7503456770735!2d121.18173353636804!3d13.919465096433166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6b4e85d787b7%3A0x77b4578bfa2f76ab!2sHacienda%20Sta.%20Monica!5e1!3m2!1sen!2sin!4v1790758329074!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
@@ -61,9 +61,9 @@ const MapSection = () => {
 
         <div className="text-center mt-16 max-w-2xl mx-auto">
           <h3 className="text-[14px] font-heading font-bold text-[#020E20] mb-4 uppercase tracking-widest">Arlenvia Training Consultancy Services – Philippines Office</h3>
-          <p className="text-[#667085] mb-8 font-light text-[15px]">Avida Residences Sta. Monica, Brgy. Antipolo del Sur, Lipa City, Batangas, Philippines 4217</p>
+          <p className="text-[#667085] mb-8 font-light text-[15px]">Hacienda Sta. Monica, Lipa City, Batangas, Philippines</p>
           
-          <a href="https://maps.google.com/?cid=13193474385573933119&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-[12px] font-heading font-bold uppercase tracking-widest text-[#020E20] hover:text-[var(--color-gold-primary)] transition-colors group/btn w-fit mx-auto">
+          <a href="https://maps.app.goo.gl/B9K2o92aXbVzQyD7A" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-[12px] font-heading font-bold uppercase tracking-widest text-[#020E20] hover:text-[var(--color-gold-primary)] transition-colors group/btn w-fit mx-auto">
             View on Google Maps
             <span className="w-8 h-px bg-[#020E20] group-hover/btn:bg-[var(--color-gold-primary)] group-hover/btn:w-12 transition-all duration-300" />
           </a>
