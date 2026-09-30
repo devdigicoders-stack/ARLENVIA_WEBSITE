@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src={logoImage} 
                 alt="Arlenvia Logo" 
-                className="h-16 object-contain" 
+                className="h-16 md:h-20 lg:h-24 w-auto object-contain"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">

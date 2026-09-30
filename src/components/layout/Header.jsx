@@ -61,7 +61,7 @@ const Header = () => {
             <img 
               src={logoImage} 
               alt="Arlenvia Logo" 
-              className={`h-9 md:h-11 lg:h-12 object-contain filter drop-shadow-lg transition-transform duration-500 ${isScrolled ? 'scale-95' : 'scale-100'}`} 
+              className={`h-10 md:h-12 lg:h-14 w-auto object-contain filter drop-shadow-lg transition-transform duration-500 ${isScrolled ? 'scale-95' : 'scale-100'}`}
             />
           </Link>
 
