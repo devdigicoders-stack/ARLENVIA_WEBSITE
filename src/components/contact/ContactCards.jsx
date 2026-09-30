@@ -53,7 +53,7 @@ const ContactCards = () => {
             <h3 className="text-[14px] font-heading font-bold text-[#020E20] mb-4 uppercase tracking-widest">Call Us</h3>
             
             <div className="text-[#667085] mb-8 font-light text-[17px] h-[48px] flex items-center justify-center">
-              <a href="tel:+639060139793" className="hover:text-[var(--color-gold-primary)] transition-colors">+63-9060139793</a>
+              <a href="tel:+639060139793" className="hover:text-[var(--color-gold-primary)] transition-colors">+63 9060139793</a>
             </div>
             
             <a href="tel:+639060139793" className="mt-auto inline-flex items-center gap-2 text-[12px] font-heading font-bold text-[#020E20] uppercase tracking-widest hover:text-[var(--color-gold-primary)] transition-colors">

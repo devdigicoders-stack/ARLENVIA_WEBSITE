@@ -54,7 +54,7 @@ const Footer = () => {
             <ul className="space-y-5 text-white/70 font-light text-[15px]">
               <li className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-3">
                 <FaPhoneAlt className="text-[var(--color-gold-primary)] md:mt-1 shrink-0" />
-                <span className="hover:text-white transition-colors cursor-pointer">+63-9060139793</span>
+                <span className="hover:text-white transition-colors cursor-pointer">+63 9060139793</span>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-3">
                 <FaEnvelope className="text-[var(--color-gold-primary)] md:mt-1 shrink-0" />
